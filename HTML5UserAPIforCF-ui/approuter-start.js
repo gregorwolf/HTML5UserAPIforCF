@@ -6,7 +6,7 @@ ar.beforeRequestHandler.use('/services/userapi/currentUser', function (req, res,
      res.end(`Missing JWT Token`);
    } else {
      res.statusCode = 200;
-     res.headers.set("Content-type", "application/json")
+     res.setHeader("Content-type", "application/json")
      res.end(JSON.stringify(req.user));
    } 
 });
