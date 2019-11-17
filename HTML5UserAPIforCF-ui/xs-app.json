@@ -1,0 +1,14 @@
+{
+  "welcomeFile": "/HTML5UserAPIforCF-ui/index.html",
+  "authenticationMethod": "route",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "source": "^/HTML5UserAPIforCF-ui/(.*)$",
+      "target": "$1",
+      "localDir": "webapp"
+    }
+  ]
+}

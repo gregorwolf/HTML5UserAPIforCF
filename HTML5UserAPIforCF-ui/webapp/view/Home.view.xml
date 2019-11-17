@@ -1,0 +1,24 @@
+<mvc:View 
+	controllerName="com.sap.sapmentors.HTML5UserAPIforCF-ui.controller.Home" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:l="sap.ui.layout"
+	displayBlock="true"
+	xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<l:VerticalLayout
+						class="sapUiContentPadding"
+						width="100%">
+						<l:content>
+							<Link
+								text="/services/userapi/currentUser"
+								href="/services/userapi/currentUser" />
+						</l:content>
+					</l:VerticalLayout>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

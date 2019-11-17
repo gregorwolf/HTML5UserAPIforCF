@@ -1,0 +1,31 @@
+ID: HTML5UserAPIforCF
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: HTML5UserAPIforCF-ui
+   type: html5
+   path: HTML5UserAPIforCF-ui
+   parameters:
+      disk-quota: 256M
+      memory: 256M
+   build-parameters:
+      builder: grunt
+   requires:
+    - name: uaa_HTML5UserAPIforCF
+    - name: dest_HTML5UserAPIforCF
+
+resources:
+ - name: uaa_HTML5UserAPIforCF
+   parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+   type: org.cloudfoundry.managed-service
+
+ - name: dest_HTML5UserAPIforCF
+   parameters:
+      service-plan: lite
+      service: destination
+   type: org.cloudfoundry.managed-service
+
