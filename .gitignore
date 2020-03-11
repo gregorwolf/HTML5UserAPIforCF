@@ -18,3 +18,4 @@ APIExternalProducer.js
 node_modules/
 preview.json
 cp.project.properties.json
+Makefile*

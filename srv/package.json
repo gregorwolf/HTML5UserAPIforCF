@@ -1,0 +1,15 @@
+{
+	"name": "serve",
+	"dependencies": {
+		"@sap/xsenv": "^2.2.0",
+		"@sap/xssec": "^2.2.5",
+		"express": "^4.17.1",
+		"passport": "^0.4.1",
+		"uuid": "^3.4.0"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"postinstall": "npm dedupe",
+		"start": "node --inspect express.js"
+	}
+}

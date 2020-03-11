@@ -11,7 +11,28 @@
 							<l:BlockLayoutRow accentCells="UserAPI">
 								<l:BlockLayoutCell id="UserAPI" width="2" title="User API">
 									<l:content>
-										<Link text="/services/userapi/currentUser" href="/services/userapi/currentUser" />
+										<Link text="/api/userInfo" href="/api/userInfo" />
+									</l:content>
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
+							<l:BlockLayoutRow accentCells="JWT">
+								<l:BlockLayoutCell id="JWT" width="2" title="JWT">
+									<l:content>
+										<Link text="/api/jwt" href="/api/jwt" />
+									</l:content>
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
+							<l:BlockLayoutRow accentCells="Backend">
+								<l:BlockLayoutCell id="BackendPublic" width="2" title="Backend without authentication">
+									<l:content>
+										<Link text="/sap/public/ping" href="/sap/public/ping" />
+									</l:content>
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
+							<l:BlockLayoutRow accentCells="Backend">
+								<l:BlockLayoutCell id="BackendPrivate" width="2" title="Backend with authentication">
+									<l:content>
+										<Link text="/sap/bc/ping" href="/sap/bc/ping" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>

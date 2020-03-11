@@ -1,12 +1,29 @@
 {
-  "welcomeFile": "/HTML5UserAPIforCF-ui/index.html",
+  "welcomeFile": "/app/index.html",
   "authenticationMethod": "route",
   "logout": {
     "logoutEndpoint": "/do/logout"
   },
   "routes": [
     {
-      "source": "^/HTML5UserAPIforCF-ui/(.*)$",
+      "source": "/api/(.*)$",
+      "target": "/api/$1",
+      "authenticationType": "xsuaa",
+      "destination": "srv_api",
+      "csrfProtection": true
+    },
+    {
+      "source": "/sap/(.*)$",
+      "target": "/sap/$1",
+      "destination": "SAP_ABAP_BACKEND"
+    },
+    {
+      "source": "^/app/logout.html$", 
+      "localDir": "webapp", 
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/app/(.*)$",
       "target": "$1",
       "localDir": "webapp"
     }

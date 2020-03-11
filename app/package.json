@@ -2,15 +2,19 @@
   "name": "HTML5UserAPIforCF-ui",
   "version": "0.0.1",
   "description": "",
-  "devDependencies": {
-    "@sap/grunt-sapui5-bestpractice-build": "1.4.2",
-    "@sap/grunt-sapui5-bestpractice-test": "2.0.1"
-  },
   "dependencies": {
-    "@sap/approuter": "^6.7.1"
+    "@sap/approuter": "^6.8.2"
+  },
+  "devDependencies": {
+    "@ui5/cli": "1.14.0",
+    "npm-watch": "^0.6.0",
+    "rimraf": "~3.0.2",
+    "ui5-middleware-livereload": "^0.1.6",
+    "ui5-middleware-simpleproxy": "^0.1.5"
   },
   "scripts": {
     "start": "node ./approuter-start.js",
+    "dev": "ui5 serve --port 1081 --open index.html",
     "test": "grunt unit_and_integration_tests"
   }
 }
