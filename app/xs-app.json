@@ -18,6 +18,11 @@
       "destination": "SAP_ABAP_BACKEND"
     },
     {
+      "source": "/b1s/(.*)$",
+      "target": "/b1s/$1",
+      "destination": "SAP_B1_BACKEND"
+    },
+    {
       "source": "^/app/logout.html$", 
       "localDir": "webapp", 
       "authenticationType": "none"

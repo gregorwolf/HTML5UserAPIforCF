@@ -36,6 +36,13 @@
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
+							<l:BlockLayoutRow accentCells="Backend">
+								<l:BlockLayoutCell id="BackendB1" width="2" title="Business One Backend">
+									<l:content>
+										<Link text="/b1s/v1/$metadata" href="/b1s/v1/$metadata" />
+									</l:content>
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
 							<l:BlockLayoutRow accentCells="Logout">
 								<l:BlockLayoutCell id="Logout" width="2" title="Logout">
 									<l:content>
