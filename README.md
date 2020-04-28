@@ -11,7 +11,7 @@ This project provides a simple MTA application which serves links to a Node.js b
 - The [Cloud Foundry commandline tool](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) is installed
 - The [MultiApps CF CLI Plugin](https://github.com/cloudfoundry-incubator/multiapps-cli-plugin) is installed
 - You've connected using `cf login`to your trial account
-- You've connected a SAP Cloud Connector to your subaccount
+- You've connected a [SAP Cloud Connector](https://tools.hana.ondemand.com/#cloud) to your subaccount
 - Principal Propagation is setup in the Cloud Connector to the ABAP Backend
 
 ### Preperation
