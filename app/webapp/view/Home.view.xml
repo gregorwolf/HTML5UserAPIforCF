@@ -37,9 +37,14 @@
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
 							<l:BlockLayoutRow accentCells="Backend">
-								<l:BlockLayoutCell id="BackendB1" width="2" title="Business One Backend">
+								<l:BlockLayoutCell id="BackendB1V1" width="1" title="Business One Backend V1 (OData V3)">
 									<l:content>
 										<Link text="/b1s/v1/$metadata" href="/b1s/v1/$metadata" />
+									</l:content>
+								</l:BlockLayoutCell>
+								<l:BlockLayoutCell id="BackendB1V2" width="1" title="Business One Backend V2 (OData V4)">
+									<l:content>
+										<Link text="/b1s/v1/$metadata" href="/b1s/v2/$metadata" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>

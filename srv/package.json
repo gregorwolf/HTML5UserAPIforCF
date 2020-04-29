@@ -5,7 +5,7 @@
 		"@sap/xssec": "^2.2.5",
 		"express": "^4.17.1",
 		"passport": "^0.4.1",
-		"uuid": "^7.0.2"
+		"uuid": "^7.0.3"
 	},
 	"devDependencies": {},
 	"scripts": {
