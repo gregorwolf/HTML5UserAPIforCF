@@ -3,6 +3,7 @@
 	"dependencies": {
 		"@sap/xsenv": "^3.0.0",
 		"@sap/xssec": "^3.0.9",
+		"lodash": ">=4.17.19",
 		"express": "^4.17.1",
 		"passport": "^0.4.1",
 		"jwt-decode": "^2.2.0"
