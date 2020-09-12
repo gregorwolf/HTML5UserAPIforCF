@@ -6,11 +6,17 @@ const xsenv = require('@sap/xsenv')
 xsenv.loadEnv();
 const JWTStrategy = require('@sap/xssec').JWTStrategy
 const services = xsenv.getServices({ xsuaa: { tags: 'xsuaa' }})
+const jwtDecode = require('jwt-decode')
 passport.use(new JWTStrategy(services.xsuaa))
 
 // config
 const host = process.env.HOST || '0.0.0.0'
 const port = process.env.PORT || 4004
+
+function getJWT(req) {
+  const jwt = /^Bearer (.*)$/.exec(req.headers.authorization)[1];
+  return jwt;
+}
 
 ;(async () => {
   // create new app
@@ -25,11 +31,21 @@ const port = process.env.PORT || 4004
     res.header("Content-Type", "application/json");
     res.send(JSON.stringify(req.user))
   })
+
   await app.get('/api/jwt', function (req, res) {
-    const jwt = /^Bearer (.*)$/.exec(req.headers.authorization)[1]
     res.header("Content-Type", "application/json");
-    res.send(JSON.stringify({ "JWT": jwt }))
-  })  
+    res.send(JSON.stringify({ "JWT": getJWT(req) }))
+  })
+  await app.get('/api/jwtdecode', function (req, res) {
+    if (!req.user) {
+      res.statusCode = 403;
+      res.end(`Missing JWT Token`);
+    } else {
+      res.statusCode = 200;
+      res.header("Content-Type", "application/json");
+      res.end(`${JSON.stringify(jwtDecode(getJWT(req)))}`);
+    }
+  })
 
   // start server
   const server = app.listen(port, host, () => {

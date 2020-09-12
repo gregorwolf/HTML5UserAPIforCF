@@ -16,6 +16,13 @@
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
 							<l:BlockLayoutRow accentCells="JWT">
+								<l:BlockLayoutCell id="jwtdecode" width="2" title="JWT Decoded">
+									<l:content>
+										<Link text="/api/jwtdecode" href="/api/jwtdecode" />
+									</l:content>
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
+							<l:BlockLayoutRow accentCells="JWT">
 								<l:BlockLayoutCell id="JWT" width="2" title="JWT">
 									<l:content>
 										<Link text="/api/jwt" href="/api/jwt" />

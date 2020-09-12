@@ -6,6 +6,32 @@
     {
       "name": "uaa.user",
       "description": "UAA"
+    },
+    {
+      "name": "$XSAPPNAME.Display",
+      "description": "display"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "department",
+      "description": "Department",
+      "valueType": "string"
+    },
+    {
+      "name": "Country",
+      "description": "Country",
+      "valueType": "s"
+    },
+    {
+      "name": "City",
+      "description": "City",
+      "valueType": "string"
+    },
+    {
+      "name": "Groups",
+      "description": "Groups",
+      "valueType": "s"
     }
   ],
   "role-templates": [
@@ -14,6 +40,19 @@
       "description": "UAA",
       "scope-references": [
         "uaa.user"
+      ]
+    },
+    {
+      "name": "Viewer",
+      "description": "View all",
+      "scope-references": [
+        "$XSAPPNAME.Display"
+      ],
+      "attribute-references": [
+        "department",
+        "Country",
+        "City",
+        "Groups"
       ]
     }
   ]
