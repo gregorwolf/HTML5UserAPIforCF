@@ -4,7 +4,13 @@
   "description": "HTML5 User API for Cloud Foundry",
   "repository": "https://github.com/gregorwolf/HTML5UserAPIforCF.git ",
   "license": "Apache 2.0",
-  "dependencies": {},
+  "dependencies": {
+    "@html5userapi-cf/app": "file:app",
+    "@html5userapi-cf/srv": "file:srv"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
   "scripts": {
     "build:cf": "mbt build -p=cf",
     "deploy:cf": "cf deploy mta_archives/html5userapi_0.0.2.mtar",
