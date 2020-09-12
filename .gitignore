@@ -20,3 +20,4 @@ preview.json
 cp.project.properties.json
 Makefile*
 dist/
+*-env.json
