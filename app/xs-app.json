@@ -1,8 +1,9 @@
 {
-  "welcomeFile": "/app/index.html",
+  "welcomeFile": "/index.html",
   "authenticationMethod": "route",
   "logout": {
-    "logoutEndpoint": "/do/logout"
+    "logoutEndpoint": "/do/logout",
+    "logoutPage": "/logged-out.html"
   },
   "routes": [
     {
@@ -23,12 +24,12 @@
       "destination": "SAP_B1_BACKEND"
     },
     {
-      "source": "^/app/logout.html$", 
+      "source": "^/logged-out.html$", 
       "localDir": "webapp", 
       "authenticationType": "none"
     },
     {
-      "source": "^/app/(.*)$",
+      "source": "^/(.*)$",
       "target": "$1",
       "localDir": "webapp"
     }
