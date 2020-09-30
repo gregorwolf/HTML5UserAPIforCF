@@ -3,14 +3,14 @@
   "version": "0.0.2",
   "description": "",
   "dependencies": {
-    "@sap/approuter": "^8.5.1"
+    "@sap/approuter": "^8.5.2"
   },
   "devDependencies": {
-    "@ui5/cli": "2.4.3",
+    "@ui5/cli": "^2.4.4",
     "npm-watch": "^0.7.0",
     "rimraf": "~3.0.2",
-    "ui5-middleware-livereload": "^0.4.1",
-    "ui5-middleware-simpleproxy": "^0.4.0"
+    "ui5-middleware-livereload": "^0.4.3",
+    "ui5-middleware-simpleproxy": "^0.5.1"
   },
   "scripts": {
     "start": "node ./approuter-start.js",

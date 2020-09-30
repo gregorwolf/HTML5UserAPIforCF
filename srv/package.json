@@ -3,10 +3,10 @@
 	"dependencies": {
 		"@sap/xsenv": "^3.0.0",
 		"@sap/xssec": "^3.0.9",
-		"lodash": ">=4.17.19",
+		"lodash": "^4.17.20",
 		"express": "^4.17.1",
 		"passport": "^0.4.1",
-		"jwt-decode": "^2.2.0"
+		"jwt-decode": "^3.0.0"
 	},
 	"devDependencies": {},
 	"scripts": {
