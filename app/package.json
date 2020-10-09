@@ -3,10 +3,10 @@
   "version": "0.0.2",
   "description": "",
   "dependencies": {
-    "@sap/approuter": "^8.5.2"
+    "@sap/approuter": "^8.5.3"
   },
   "devDependencies": {
-    "@ui5/cli": "^2.4.4",
+    "@ui5/cli": "^2.4.5",
     "npm-watch": "^0.7.0",
     "rimraf": "~3.0.2",
     "ui5-middleware-livereload": "^0.4.3",
