@@ -21,3 +21,4 @@ cp.project.properties.json
 Makefile*
 dist/
 *-env.json
+resources/
