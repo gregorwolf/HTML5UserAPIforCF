@@ -1,9 +1,9 @@
 {
-  "welcomeFile": "/index.html",
+  "welcomeFile": "/comsapsapmentorshtml5userapiforcfui/index.html",
   "authenticationMethod": "route",
   "logout": {
     "logoutEndpoint": "/do/logout",
-    "logoutPage": "/logged-out.html"
+    "logoutPage": "/comsapsapmentorshtml5userapiforcfui/logged-out.html"
   },
   "routes": [
     {
@@ -22,16 +22,6 @@
       "source": "/b1s/(.*)$",
       "target": "/b1s/$1",
       "destination": "SAP_B1_BACKEND"
-    },
-    {
-      "source": "^/logged-out.html$", 
-      "localDir": "webapp", 
-      "authenticationType": "none"
-    },
-    {
-      "source": "^/(.*)$",
-      "target": "$1",
-      "localDir": "webapp"
     }
   ]
 }

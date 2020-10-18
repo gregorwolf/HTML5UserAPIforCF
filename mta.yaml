@@ -24,8 +24,8 @@ modules:
       - name: html5userapi-connectivity-service
 
   - name: html5userapi-ui
-    type: html5
-    path: app
+    type: approuter.nodejs
+    path: approuter
     parameters:
       memory: 256M
       disk-quota: 1024M
@@ -35,6 +35,7 @@ modules:
       - name: html5userapi-destination-service
       - name: html5userapi-connectivity-service
       - name: html5userapi-uaa
+      - name: html5userapi-repo-runtime
       - name: srv_api
         group: destinations
         properties:
@@ -42,21 +43,53 @@ modules:
             strictSSL: false
             name: srv_api
             url: ~{url}
+  - name: html5userapi-deployer
+    type: com.sap.application.content
+    path: .
+    requires:
+      - name: html5userapi-repo-host
+        parameters:
+          content-target: true
+    build-parameters:
+      build-result: resources
+      requires:
+        - artifacts:
+            - dist/HTML5Module-content.zip
+          name: html5userapi-HTML5Module
+          target-path: resources/
+  - name: html5userapi-HTML5Module
+    type: html5
+    path: HTML5Module
+    build-parameters:
+      builder: custom
+      commands:
+        - npm run build
+      supported-platforms: []
 
 resources:
- - name: html5userapi-uaa
-   parameters:
+  - name: html5userapi-uaa
+    parameters:
       path: ./xs-security.json
       service-plan: application
       service: xsuaa
-   type: org.cloudfoundry.managed-service
- - name: html5userapi-destination-service
-   parameters:
+    type: org.cloudfoundry.managed-service
+  - name: html5userapi-destination-service
+    parameters:
       service-plan: lite
       service: destination
-   type: org.cloudfoundry.managed-service
- - name: html5userapi-connectivity-service
-   parameters:
+    type: org.cloudfoundry.managed-service
+  - name: html5userapi-connectivity-service
+    parameters:
       service-plan: lite
       service: connectivity
-   type: org.cloudfoundry.managed-service
+    type: org.cloudfoundry.managed-service
+  - name: html5userapi-repo-host
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-host
+  - name: html5userapi-repo-runtime
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service-plan: app-runtime
+      service: html5-apps-repo
