@@ -35,15 +35,13 @@
 										<Link text="/sap/public/ping" href="/sap/public/ping" />
 									</l:content>
 								</l:BlockLayoutCell>
-							</l:BlockLayoutRow>
-							<l:BlockLayoutRow accentCells="Backend">
 								<l:BlockLayoutCell id="BackendPrivate" width="2" title="Backend with authentication">
 									<l:content>
 										<Link text="/sap/bc/ping" href="/sap/bc/ping" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
-							<l:BlockLayoutRow accentCells="Backend">
+							<l:BlockLayoutRow accentCells="BackendB1">
 								<l:BlockLayoutCell id="BackendB1V1" width="1" title="Business One Backend V1 (OData V3)">
 									<l:content>
 										<Link text="/b1s/v1/$metadata" href="/b1s/v1/$metadata" />
@@ -52,6 +50,30 @@
 								<l:BlockLayoutCell id="BackendB1V2" width="1" title="Business One Backend V2 (OData V4)">
 									<l:content>
 										<Link text="/b1s/v1/$metadata" href="/b1s/v2/$metadata" />
+									</l:content>
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
+							<l:BlockLayoutRow accentCells="BackendBookshopV4">
+								<l:BlockLayoutCell id="BackendBookshopAdminV4" width="1" title="Bookshop Admin Backend OData V4">
+									<l:content>
+										<Link text="/admin/" href="/admin/" />
+									</l:content>
+								</l:BlockLayoutCell>
+								<l:BlockLayoutCell id="BackendBookshopCatalogV4" width="1" title="Bookshop Catalog Backend OData V4">
+									<l:content>
+										<Link text="/catalog/" href="/catalog/" />
+									</l:content>
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
+							<l:BlockLayoutRow accentCells="BackendBookshopV2">
+								<l:BlockLayoutCell id="BackendBookshopAdminV2" width="1" title="Bookshop Admin Backend OData V2">
+									<l:content>
+										<Link text="/v2/admin/" href="/v2/admin/" />
+									</l:content>
+								</l:BlockLayoutCell>
+								<l:BlockLayoutCell id="BackendBookshopCatalogV2" width="1" title="Bookshop Catalog Backend OData V2">
+									<l:content>
+										<Link text="/v2/catalog/" href="/v2/catalog/" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>

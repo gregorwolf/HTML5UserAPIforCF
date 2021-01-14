@@ -22,6 +22,34 @@
       "source": "/b1s/(.*)$",
       "target": "/b1s/$1",
       "destination": "SAP_B1_BACKEND"
+    },
+    {
+      "source": "/v2/admin/(.*)$",
+      "target": "/v2/admin/$1",
+      "authenticationType": "xsuaa",
+      "destination": "bookshop",
+      "csrfProtection": true
+    },
+    {
+      "source": "/v2/catalog/(.*)$",
+      "target": "/v2/catalog/$1",
+      "authenticationType": "xsuaa",
+      "destination": "bookshop",
+      "csrfProtection": true
+    },
+    {
+      "source": "/admin/(.*)$",
+      "target": "/admin/$1",
+      "authenticationType": "xsuaa",
+      "destination": "bookshop",
+      "csrfProtection": true
+    },
+    {
+      "source": "/catalog/(.*)$",
+      "target": "/catalog/$1",
+      "authenticationType": "xsuaa",
+      "destination": "bookshop",
+      "csrfProtection": true
     }
   ]
 }

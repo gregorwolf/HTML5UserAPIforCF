@@ -4,15 +4,15 @@
     "description": "",
     "dependencies": {},
     "devDependencies": {
-        "@ui5/cli": "^2.4.5",
+        "@ui5/cli": "^2.8.0",
         "npm-watch": "^0.7.0",
         "rimraf": "~3.0.2",
-        "ui5-middleware-livereload": "^0.4.3",
-        "ui5-middleware-simpleproxy": "^0.5.1",
-        "@sapui5/ts-types": "^1.82.0",
-        "@sap/approuter": "^8.5.4",
-        "@sap/ui5-builder-webide-extension": "^1.0.14",
-        "@sap/html5-repo-mock": "^1.6.0"
+        "ui5-middleware-livereload": "^0.5.1",
+        "ui5-middleware-simpleproxy": "^0.6.1",
+        "@sapui5/ts-types": "^1.84.4",
+        "@sap/approuter": "^9.0.2",
+        "@sap/ui5-builder-webide-extension": "^1.1.0",
+        "@sap/html5-repo-mock": "^2.0.1"
     },
     "scripts": {
         "build": "npm run clean && npm run build:ui5 && npm run zip",

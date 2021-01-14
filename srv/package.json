@@ -1,12 +1,12 @@
 {
 	"name": "html5userapi-srv",
 	"dependencies": {
-		"@sap/xsenv": "^3.0.0",
+		"@sap/xsenv": "^3.1.0",
 		"@sap/xssec": "^3.0.10",
 		"lodash": "^4.17.20",
 		"express": "^4.17.1",
 		"passport": "^0.4.1",
-		"jwt-decode": "^3.0.0"
+		"jwt-decode": "^3.1.2"
 	},
 	"devDependencies": {},
 	"scripts": {
