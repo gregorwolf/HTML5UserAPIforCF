@@ -14,22 +14,27 @@
   ],
   "attributes": [
     {
+      "name": "company",
+      "description": "Company",
+      "valueType": "string"
+    },
+    {
       "name": "department",
       "description": "Department",
       "valueType": "string"
     },
     {
-      "name": "Country",
+      "name": "country",
       "description": "Country",
       "valueType": "s"
     },
     {
-      "name": "City",
+      "name": "city",
       "description": "City",
       "valueType": "string"
     },
     {
-      "name": "Groups",
+      "name": "groups",
       "description": "Groups",
       "valueType": "s"
     }
@@ -49,10 +54,11 @@
         "$XSAPPNAME.Display"
       ],
       "attribute-references": [
+        "company",
         "department",
-        "Country",
-        "City",
-        "Groups"
+        "country",
+        "city",
+        "groups"
       ]
     }
   ]
