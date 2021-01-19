@@ -41,6 +41,18 @@
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
+							<l:BlockLayoutRow accentCells="BackendFLP">
+								<l:BlockLayoutCell id="FLPdirect" width="2" title="Fiori Launchpad direct">
+									<l:content>
+										<Link text="/sap/bc/ui2/flp" href="/sap/bc/ui2/flp" />
+									</l:content>
+								</l:BlockLayoutCell>
+								<l:BlockLayoutCell id="FLPiframe" width="2" title="Fiori Launchpad iFrame">
+									<l:content>
+										<Link text="iframe.html" href="iframe.html" />
+									</l:content>
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
 							<l:BlockLayoutRow accentCells="BackendB1">
 								<l:BlockLayoutCell id="BackendB1V1" width="1" title="Business One Backend V1 (OData V3)">
 									<l:content>
