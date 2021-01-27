@@ -1,15 +1,24 @@
-<mvc:View controllerName="com.sap.sapmentors.HTML5UserAPIforCF-ui.controller.Home" 
-	xmlns:mvc="sap.ui.core.mvc" 
-	xmlns:l="sap.ui.layout" displayBlock="true" 
-	xmlns="sap.m">
+<mvc:View controllerName="com.sap.sapmentors.HTML5UserAPIforCF-ui.controller.Home" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" displayBlock="true" xmlns="sap.m">
 	<Shell id="shell">
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
 					<l:VerticalLayout class="sapUiContentPadding" width="100%">
 						<l:BlockLayout id="BlockLayout">
-							<l:BlockLayoutRow accentCells="UserAPI">
-								<l:BlockLayoutCell id="UserAPI" width="2" title="User API">
+							<l:BlockLayoutRow accentCells="user-api">
+								<l:BlockLayoutCell id="user-api-currentUser" width="2" title="Current User">
+									<l:content>
+										<Link text="/user-api/currentUser" href="/user-api/currentUser" />
+									</l:content>
+								</l:BlockLayoutCell>
+								<l:BlockLayoutCell id="user-api-attributes" width="2" title="User attributes">
+									<l:content>
+										<Link text="/user-api/attributes" href="/user-api/attributes" />
+									</l:content>
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
+							<l:BlockLayoutRow accentCells="CustomUserInfo">
+								<l:BlockLayoutCell id="UserAPI" width="2" title="Custom Express Handler for User Info">
 									<l:content>
 										<Link text="/api/userInfo" href="/api/userInfo" />
 									</l:content>

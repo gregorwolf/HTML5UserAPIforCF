@@ -7,6 +7,11 @@
   },
   "routes": [
     {
+      "source": "^/user-api(.*)",
+      "target": "$1",
+      "service": "sap-approuter-userapi"
+    },
+    {
       "source": "/api/(.*)$",
       "target": "/api/$1",
       "authenticationType": "xsuaa",
