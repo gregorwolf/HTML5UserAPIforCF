@@ -1,0 +1,28 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Read envirnoment variables
+        run: env
+      - name: Read current working directory
+        run: pwd
+      - name: Read current working directory content
+        run: ls -la 
+      - name: Build mta
+        uses: addnab/docker-run-action@v2
+        with:
+          image: devxci/mbtci:latest
+          options: -v ${{ github.workspace }}:/project 
+          run: |
+            echo "Running Script"
+            mbt build -p=cf
