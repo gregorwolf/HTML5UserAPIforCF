@@ -31,4 +31,7 @@ jobs:
           options: -v /home/runner/work/HTML5UserAPIforCF/HTML5UserAPIforCF:/project
           run: |
             echo "Running Script"
+            whoami
+            pwd
+            ls -la /project
             mbt build -p=cf
