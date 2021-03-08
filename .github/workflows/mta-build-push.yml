@@ -18,11 +18,17 @@ jobs:
         run: pwd
       - name: Read current working directory content
         run: ls -la 
+      # - uses: mosteo-actions/docker-run@v1
+      #   with:
+      #     image: devxci/mbtci:latest
+      #     guest-dir: /project
+      #     command: mbt build -p=cf
       - name: Build mta
         uses: addnab/docker-run-action@v2
         with:
           image: devxci/mbtci:latest
-          options: -v ${{ github.workspace }}:/project 
+          shell: bash
+          options: -v /home/runner/work/HTML5UserAPIforCF/HTML5UserAPIforCF:/project
           run: |
             echo "Running Script"
             mbt build -p=cf
