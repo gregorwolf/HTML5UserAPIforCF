@@ -3,7 +3,7 @@ name: ci
 on:
   push:
     branches:
-      - test
+      - master
 
 jobs:
   main:
@@ -17,21 +17,7 @@ jobs:
       - name: Read current working directory
         run: pwd
       - name: Read current working directory content
-        run: ls -la 
-      # - uses: mosteo-actions/docker-run@v1
-      #   with:
-      #     image: devxci/mbtci:latest
-      #     guest-dir: /project
-      #     command: mbt build -p=cf
+        run: ls -la
       - name: Build mta
-        uses: addnab/docker-run-action@v2
-        with:
-          image: devxci/mbtci:latest
-          shell: bash
-          options: -v /home/runner/work/HTML5UserAPIforCF/HTML5UserAPIforCF:/project
-          run: |
-            echo "Running Script"
-            whoami
-            pwd
-            ls -la /project
-            mbt build -p=cf
+        run: |
+          docker run -it --rm -v "$(pwd):/project" devxci/mbtci:latest mbt build -p=cf
