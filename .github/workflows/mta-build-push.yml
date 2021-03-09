@@ -20,4 +20,4 @@ jobs:
         run: ls -la
       - name: Build mta
         run: |
-          docker run -it --rm -v "$(pwd):/project" devxci/mbtci:latest mbt build -p=cf
+          docker run -t --rm -v "$(pwd):/project" devxci/mbtci:latest mbt build -p=cf
