@@ -23,6 +23,21 @@ modules:
       - name: html5userapi-destination-service
       - name: html5userapi-connectivity-service
 
+  - name: html5userapi-srv-java
+    type: java
+    path: srv-java/application
+    parameters:
+      memory: 512M
+      disk-quota: 1024M
+    provides:
+      - name: srv_java_api
+        properties:
+          url: ${default-url}
+    requires:
+      - name: html5userapi-uaa
+      - name: html5userapi-destination-service
+      - name: html5userapi-connectivity-service
+
   - name: html5userapi-ui
     type: approuter.nodejs
     path: approuter
@@ -42,6 +57,13 @@ modules:
             forwardAuthToken: true
             strictSSL: false
             name: srv_api
+            url: ~{url}
+      - name: srv_java_api
+        group: destinations
+        properties:
+            forwardAuthToken: true
+            strictSSL: false
+            name: srv_java_api
             url: ~{url}
   - name: html5userapi-deployer
     type: com.sap.application.content

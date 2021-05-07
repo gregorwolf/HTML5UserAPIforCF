@@ -62,6 +62,13 @@
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
+							<l:BlockLayoutRow accentCells="BackendRFC">
+								<l:BlockLayoutCell id="RFC" width="2" title="Backend via Java RFC">
+									<l:content>
+										<Link text="/rfc?name=USER_NAME_GET" href="/rfc?name=USER_NAME_GET" />
+									</l:content>
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
 							<l:BlockLayoutRow accentCells="BackendB1">
 								<l:BlockLayoutCell id="BackendB1V1" width="1" title="Business One Backend V1 (OData V3)">
 									<l:content>

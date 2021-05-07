@@ -16,6 +16,8 @@
     "build:cf": "mbt build -p=cf",
     "build:cf:docker": "docker run -it --rm -v \"$(pwd):/project\" devxci/mbtci:latest mbt build -p=cf",
     "deploy:cf": "cf deploy mta_archives/html5userapi_0.0.2.mtar",
+    "deploy:cf:approuter": "cf deploy mta_archives/html5userapi_0.0.2.mtar -m html5userapi-ui",
+    "deploy:cf:srv-java": "cf deploy mta_archives/html5userapi_0.0.2.mtar -m html5userapi-srv-java",
     "deploy:cf:html5repo": "cf deploy mta_archives/html5userapi_0.0.2.mtar -m html5userapi-deployer",
     "debug:cf": "cf ssh html5userapi-srv -N -T -L 9229:127.0.0.1:9229",
     "update:uaa": "cf update-service html5userapi-uaa -c xs-security.json",

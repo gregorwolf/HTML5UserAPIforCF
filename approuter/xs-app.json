@@ -19,6 +19,13 @@
       "csrfProtection": true
     },
     {
+      "source": "/rfc(.*)$",
+      "target": "/rfc$1",
+      "authenticationType": "xsuaa",
+      "destination": "srv_java_api",
+      "csrfProtection": true
+    },
+    {
       "source": "/sap/(.*)$",
       "target": "/sap/$1",
       "destination": "SAP_ABAP_BACKEND"

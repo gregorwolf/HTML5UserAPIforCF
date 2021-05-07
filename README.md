@@ -18,7 +18,7 @@ This project provides a simple MTA application which serves links to a Node.js b
 
 Before you can deploy the application to your Cloud Foundry account the destinations to the backend system must be created. Please find here what I've used in my environment:
 
-If you want to test the connection to a ABAP Backend, then the destination SAP_ABAP_BACKEND used by the approuter:
+If you want to test the connection to a SAP ABAP Backend via HTTP(S), then you have to create the destination SAP_ABAP_BACKEND used by the approuter:
 
 ```
 URL=http\://npl752.virtual\:44300
@@ -29,7 +29,20 @@ sap-client=001
 Authentication=PrincipalPropagation
 ```
 
-must be created. If you want to test the connection to the SAP Business One Service Layer, then the destination SAP_B1_BACKEND must be created:
+If you want to test the connection to the SAP ABAP via RFC, then you have to create the destination SAP_ABAP_BACKEND_RFC used by the Java application:
+
+```
+Type=RFC
+jco.client.ashost=npl752.virtual
+jco.destination.repository.user=SAPUSERNAME
+Name=SAP_ABAP_BACKEND_RFC
+jco.client.user=SAPUSERNAME
+jco.client.sysnr=01
+jco.destination.proxy_type=OnPremise
+jco.client.client=001
+```
+
+If you want to test the connection to the SAP Business One Service Layer via HTTP(S), then the destination SAP_B1_BACKEND must be created:
 
 ```
 URL=http\://b1server.virtual\:44300
@@ -52,4 +65,3 @@ password: 1234
 ### Deploy
 
 `npm run deploy:cf`
-
