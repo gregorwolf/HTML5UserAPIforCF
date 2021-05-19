@@ -1,0 +1,19 @@
+###
+GET {{$dotenv server}}/api/userInfo
+Authorization: Bearer {{$dotenv token}}
+
+###
+GET {{$dotenv server}}/api/jwt
+Authorization: Bearer {{$dotenv token}}
+
+###
+GET {{$dotenv server}}/api/jwtdecode
+Authorization: Bearer {{$dotenv token}}
+
+###
+GET {{$dotenv server}}/api/public/ping
+Authorization: Bearer {{$dotenv token}}
+
+###
+GET {{$dotenv server}}/api/bc/ping
+Authorization: Bearer {{$dotenv token}}

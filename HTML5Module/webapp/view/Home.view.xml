@@ -50,6 +50,18 @@
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
+							<l:BlockLayoutRow accentCells="Backend with SAP Cloud SDK">
+								<l:BlockLayoutCell id="BackendPublicSDK" width="2" title="Backend without authentication">
+									<l:content>
+										<Link text="/api/public/ping" href="/api/public/ping" />
+									</l:content>
+								</l:BlockLayoutCell>
+								<l:BlockLayoutCell id="BackendPrivateSDK" width="2" title="Backend with authentication">
+									<l:content>
+										<Link text="/api/bc/ping" href="/api/bc/ping" />
+									</l:content>
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
 							<l:BlockLayoutRow accentCells="BackendFLP">
 								<l:BlockLayoutCell id="FLPdirect" width="2" title="Fiori Launchpad direct">
 									<l:content>
