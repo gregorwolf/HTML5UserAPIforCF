@@ -4,13 +4,13 @@
     "description": "",
     "dependencies": {},
     "devDependencies": {
-        "@ui5/cli": "^2.10.3",
+        "@ui5/cli": "^2.10.4",
         "npm-watch": "^0.9.0",
         "rimraf": "~3.0.2",
         "ui5-middleware-livereload": "^0.5.4",
         "ui5-middleware-simpleproxy": "^0.7.2",
-        "@sapui5/ts-types": "^1.84.13",
-        "@sap/approuter": "^10.2.0",
+        "@sapui5/ts-types": "^1.87.6",
+        "@sap/approuter": "^10.3.0",
         "@sap/ui5-builder-webide-extension": "^1.1.4",
         "@sap/html5-repo-mock": "^2.0.1"
     },
