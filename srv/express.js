@@ -13,9 +13,13 @@ const { executeHttpRequest } = require("@sap-cloud-sdk/core");
 // config
 const host = process.env.HOST || "0.0.0.0";
 const port = process.env.PORT || 4004;
-const destination = {
-  destinationName: process.env.DESTINATION || "SAP_ABAP_BACKEND",
-};
+
+function getDestination(req) {
+  return {
+    destinationName: process.env.DESTINATION || "SAP_ABAP_BACKEND",
+    jwt: getJWT(req),
+  };
+}
 
 function getJWT(req) {
   const jwt = /^Bearer (.*)$/.exec(req.headers.authorization)[1];
@@ -51,10 +55,13 @@ function getJWT(req) {
 
   await app.get("/api/public/ping", async function (req, res) {
     try {
-      const resultServiceCollection = await executeHttpRequest(destination, {
-        method: "get",
-        url: "/sap/public/ping",
-      });
+      const resultServiceCollection = await executeHttpRequest(
+        getDestination(req),
+        {
+          method: "get",
+          url: "/sap/public/ping",
+        }
+      );
       res.send(resultServiceCollection.data);
     } catch (error) {
       let message = error.message;
@@ -67,10 +74,13 @@ function getJWT(req) {
 
   await app.get("/api/bc/ping", async function (req, res) {
     try {
-      const resultServiceCollection = await executeHttpRequest(destination, {
-        method: "get",
-        url: "/sap/bc/ping",
-      });
+      const resultServiceCollection = await executeHttpRequest(
+        getDestination(req),
+        {
+          method: "get",
+          url: "/sap/bc/ping",
+        }
+      );
       res.send(resultServiceCollection.data);
     } catch (error) {
       let message = error.message;
