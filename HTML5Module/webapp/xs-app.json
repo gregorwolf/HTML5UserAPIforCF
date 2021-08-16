@@ -1,9 +1,9 @@
 {
-  "welcomeFile": "/comsapsapmentorshtml5userapiforcfui/index.html",
+  "welcomeFile": "index.html",
   "authenticationMethod": "route",
   "logout": {
     "logoutEndpoint": "/do/logout",
-    "logoutPage": "/comsapsapmentorshtml5userapiforcfui/logged-out.html"
+    "logoutPage": "/logout-page.html"
   },
   "routes": [
     {
@@ -12,10 +12,16 @@
       "service": "sap-approuter-userapi"
     },
     {
+      "source": "^logout-page.html$",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "none"
+    },
+    {
       "source": "^(.*)$",
       "target": "$1",
       "service": "html5-apps-repo-rt",
-      "authenticationType": "xsuaa"
+      "authenticationType": "xsuaa",
+      "cacheControl": "no-cache, no-store, must-revalidate"
     }
   ]
 }

@@ -79,6 +79,7 @@ modules:
             - dist/HTML5Module-content.zip
           name: html5userapi-HTML5Module
           target-path: resources/
+
   - name: html5userapi-HTML5Module
     type: html5
     path: HTML5Module
@@ -88,6 +89,37 @@ modules:
         - npm i
         - npm run build
       supported-platforms: []
+  - name: html5userapi-destination-content
+    type: com.sap.application.content
+    requires:
+    - name: html5userapi-uaa
+      parameters:
+        service-key:
+          name: html5userapi-uaa-key
+    - name: html5userapi-repo-host
+      parameters:
+        service-key:
+          name: html5userapi-repo-host-key
+    - name: html5userapi-destination-service
+      parameters:
+        content-target: true
+    - name: html5userapi-connectivity-service
+    parameters:
+      content:
+        subaccount:
+          destinations:
+          - Name: html5userapi-repo-host
+            ServiceInstanceName: html5userapi-repo-host
+            ServiceKeyName: html5userapi-repo-host-key
+            sap.cloud.service: cloud.service
+          - Authentication: OAuth2UserTokenExchange
+            Name: html5userapi-uaa
+            ServiceInstanceName: html5userapi-uaa
+            ServiceKeyName: html5userapi-uaa-key
+            sap.cloud.service: cloud.service
+          existing_destinations_policy: update
+    build-parameters:
+      no-source: true
 
 resources:
   - name: html5userapi-uaa

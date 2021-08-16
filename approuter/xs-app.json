@@ -3,7 +3,7 @@
   "authenticationMethod": "route",
   "logout": {
     "logoutEndpoint": "/do/logout",
-    "logoutPage": "/comsapsapmentorshtml5userapiforcfui/logged-out.html"
+    "logoutPage": "/comsapsapmentorshtml5userapiforcfui/logout-page.html"
   },
   "routes": [
     {
