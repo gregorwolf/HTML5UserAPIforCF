@@ -15,14 +15,14 @@
       "source": "/api/(.*)$",
       "target": "/api/$1",
       "authenticationType": "xsuaa",
-      "destination": "srv_api",
+      "destination": "html5userapi-srv",
       "csrfProtection": true
     },
     {
       "source": "/rfc(.*)$",
       "target": "/rfc$1",
       "authenticationType": "xsuaa",
-      "destination": "srv_java_api",
+      "destination": "html5userapi-srv-java",
       "csrfProtection": true
     },
     {

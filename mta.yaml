@@ -56,14 +56,14 @@ modules:
         properties:
             forwardAuthToken: true
             strictSSL: false
-            name: srv_api
+            name: html5userapi-srv
             url: ~{url}
       - name: srv_java_api
         group: destinations
         properties:
             forwardAuthToken: true
             strictSSL: false
-            name: srv_java_api
+            name: html5userapi-srv-java
             url: ~{url}
   - name: html5userapi-deployer
     type: com.sap.application.content
@@ -129,10 +129,34 @@ resources:
       service: xsuaa
     type: org.cloudfoundry.managed-service
   - name: html5userapi-destination-service
+    type: org.cloudfoundry.managed-service
     parameters:
       service-plan: lite
       service: destination
-    type: org.cloudfoundry.managed-service
+      config:
+        init_data:
+          subaccount:
+            existing_destinations_policy: update
+            destinations:
+              - Name: html5userapi-srv
+                Description: html5userapi NodeJS backend service
+                Authentication: NoAuthentication
+                ProxyType: Internet
+                Type: HTTP
+                URL: ~{srv_api/url}
+                HTML5.DynamicDestination: true
+                HTML5.ForwardAuthToken: true
+              - Name: html5userapi-srv-java
+                Description: html5userapi Java backend service
+                Authentication: NoAuthentication
+                ProxyType: Internet
+                Type: HTTP
+                URL: ~{srv_java_api/url}
+                HTML5.DynamicDestination: true
+                HTML5.ForwardAuthToken: true
+    requires:
+      - name: srv_api
+      - name: srv_java_api
   - name: html5userapi-connectivity-service
     parameters:
       service-plan: lite
