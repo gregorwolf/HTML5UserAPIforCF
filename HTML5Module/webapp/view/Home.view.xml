@@ -8,64 +8,64 @@
 							<l:BlockLayoutRow accentCells="user-api">
 								<l:BlockLayoutCell id="user-api-currentUser" width="2" title="Current User">
 									<l:content>
-										<Link text="/user-api/currentUser" href="/user-api/currentUser" />
+										<Link text="/user-api/currentUser" href="user-api/currentUser" />
 									</l:content>
 								</l:BlockLayoutCell>
 								<l:BlockLayoutCell id="user-api-attributes" width="2" title="User attributes">
 									<l:content>
-										<Link text="/user-api/attributes" href="/user-api/attributes" />
+										<Link text="/user-api/attributes" href="user-api/attributes" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
 							<l:BlockLayoutRow accentCells="CustomUserInfo">
 								<l:BlockLayoutCell id="UserAPI" width="2" title="Custom Express Handler for User Info">
 									<l:content>
-										<Link text="/api/userInfo" href="/api/userInfo" />
+										<Link text="/api/userInfo" href="api/userInfo" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
 							<l:BlockLayoutRow accentCells="JWT">
 								<l:BlockLayoutCell id="jwtdecode" width="2" title="JWT Decoded">
 									<l:content>
-										<Link text="/api/jwtdecode" href="/api/jwtdecode" />
+										<Link text="/api/jwtdecode" href="api/jwtdecode" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
 							<l:BlockLayoutRow accentCells="JWT">
 								<l:BlockLayoutCell id="JWT" width="2" title="JWT">
 									<l:content>
-										<Link text="/api/jwt" href="/api/jwt" />
+										<Link text="/api/jwt" href="api/jwt" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
 							<l:BlockLayoutRow accentCells="Backend">
 								<l:BlockLayoutCell id="BackendPublic" width="2" title="Backend without authentication">
 									<l:content>
-										<Link text="/sap/public/ping" href="/sap/public/ping" />
+										<Link text="/sap/public/ping" href="sap/public/ping" />
 									</l:content>
 								</l:BlockLayoutCell>
 								<l:BlockLayoutCell id="BackendPrivate" width="2" title="Backend with authentication">
 									<l:content>
-										<Link text="/sap/bc/ping" href="/sap/bc/ping" />
+										<Link text="/sap/bc/ping" href="sap/bc/ping" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
 							<l:BlockLayoutRow accentCells="Backend with SAP Cloud SDK">
 								<l:BlockLayoutCell id="BackendPublicSDK" width="2" title="Backend without authentication">
 									<l:content>
-										<Link text="/api/public/ping" href="/api/public/ping" />
+										<Link text="/api/public/ping" href="api/public/ping" />
 									</l:content>
 								</l:BlockLayoutCell>
 								<l:BlockLayoutCell id="BackendPrivateSDK" width="2" title="Backend with authentication">
 									<l:content>
-										<Link text="/api/bc/ping" href="/api/bc/ping" />
+										<Link text="/api/bc/ping" href="api/bc/ping" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
 							<l:BlockLayoutRow accentCells="BackendFLP">
 								<l:BlockLayoutCell id="FLPdirect" width="2" title="Fiori Launchpad direct">
 									<l:content>
-										<Link text="/sap/bc/ui2/flp" href="/sap/bc/ui2/flp" />
+										<Link text="/sap/bc/ui2/flp" href="sap/bc/ui2/flp" />
 									</l:content>
 								</l:BlockLayoutCell>
 								<l:BlockLayoutCell id="FLPiframe" width="2" title="Fiori Launchpad iFrame">
@@ -77,43 +77,43 @@
 							<l:BlockLayoutRow accentCells="BackendRFC">
 								<l:BlockLayoutCell id="RFC" width="2" title="Backend via Java RFC">
 									<l:content>
-										<Link text="/rfc?name=USER_NAME_GET" href="/rfc?name=USER_NAME_GET" />
+										<Link text="/rfc?name=USER_NAME_GET" href="rfc?name=USER_NAME_GET" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
 							<l:BlockLayoutRow accentCells="BackendB1">
 								<l:BlockLayoutCell id="BackendB1V1" width="1" title="Business One Backend V1 (OData V3)">
 									<l:content>
-										<Link text="/b1s/v1/$metadata" href="/b1s/v1/$metadata" />
+										<Link text="/b1s/v1/$metadata" href="b1s/v1/$metadata" />
 									</l:content>
 								</l:BlockLayoutCell>
 								<l:BlockLayoutCell id="BackendB1V2" width="1" title="Business One Backend V2 (OData V4)">
 									<l:content>
-										<Link text="/b1s/v1/$metadata" href="/b1s/v2/$metadata" />
+										<Link text="/b1s/v1/$metadata" href="b1s/v2/$metadata" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
 							<l:BlockLayoutRow accentCells="BackendBookshopV4">
 								<l:BlockLayoutCell id="BackendBookshopAdminV4" width="1" title="Bookshop Admin Backend OData V4">
 									<l:content>
-										<Link text="/admin/" href="/admin/" />
+										<Link text="/admin/" href="admin/" />
 									</l:content>
 								</l:BlockLayoutCell>
 								<l:BlockLayoutCell id="BackendBookshopCatalogV4" width="1" title="Bookshop Catalog Backend OData V4">
 									<l:content>
-										<Link text="/catalog/" href="/catalog/" />
+										<Link text="/catalog/" href="catalog/" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
 							<l:BlockLayoutRow accentCells="BackendBookshopV2">
 								<l:BlockLayoutCell id="BackendBookshopAdminV2" width="1" title="Bookshop Admin Backend OData V2">
 									<l:content>
-										<Link text="/v2/admin/" href="/v2/admin/" />
+										<Link text="/v2/admin/" href="v2/admin/" />
 									</l:content>
 								</l:BlockLayoutCell>
 								<l:BlockLayoutCell id="BackendBookshopCatalogV2" width="1" title="Bookshop Catalog Backend OData V2">
 									<l:content>
-										<Link text="/v2/catalog/" href="/v2/catalog/" />
+										<Link text="/v2/catalog/" href="v2/catalog/" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
