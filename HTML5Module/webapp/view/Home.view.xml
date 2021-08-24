@@ -123,9 +123,9 @@
 										<Link text="do/logout" href="do/logout" />
 									</l:content>
 								</l:BlockLayoutCell>
-								<l:BlockLayoutCell id="Version" width="2" title="Logout">
+								<l:BlockLayoutCell id="Version" width="2" title="Version">
 									<l:content>
-										<Text text="0.0.2" />
+										<Text text="0.0.4" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
