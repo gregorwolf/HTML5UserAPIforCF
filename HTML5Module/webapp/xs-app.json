@@ -12,16 +12,73 @@
       "service": "sap-approuter-userapi"
     },
     {
+      "source": "/api/(.*)$",
+      "target": "/api/$1",
+      "authenticationType": "xsuaa",
+      "destination": "srv_api",
+      "csrfProtection": true
+    },
+    {
+      "source": "/rfc(.*)$",
+      "target": "/rfc$1",
+      "authenticationType": "xsuaa",
+      "destination": "srv_java_api",
+      "csrfProtection": true
+    },
+    {
+      "source": "/sap/(.*)$",
+      "target": "/sap/$1",
+      "destination": "SAP_ABAP_BACKEND"
+    },
+    {
+      "source": "/b1s/(.*)$",
+      "target": "/b1s/$1",
+      "destination": "SAP_B1_BACKEND"
+    },
+    {
+      "source": "/v2/admin/(.*)$",
+      "target": "/v2/admin/$1",
+      "authenticationType": "xsuaa",
+      "destination": "bookshop",
+      "csrfProtection": true
+    },
+    {
+      "source": "/v2/catalog/(.*)$",
+      "target": "/v2/catalog/$1",
+      "authenticationType": "xsuaa",
+      "destination": "bookshop",
+      "csrfProtection": true
+    },
+    {
+      "source": "/admin/(.*)$",
+      "target": "/admin/$1",
+      "authenticationType": "xsuaa",
+      "destination": "bookshop",
+      "csrfProtection": true
+    },
+    {
+      "source": "/catalog/(.*)$",
+      "target": "/catalog/$1",
+      "authenticationType": "xsuaa",
+      "destination": "bookshop",
+      "csrfProtection": true
+    },
+    {
       "source": "^logout-page.html$",
       "service": "html5-apps-repo-rt",
       "authenticationType": "none"
     },
     {
-      "source": "^(.*)$",
-      "target": "$1",
+      "source": "^index.html$",
       "service": "html5-apps-repo-rt",
       "authenticationType": "xsuaa",
       "cacheControl": "no-cache, no-store, must-revalidate"
+    },
+    {
+      "source": "^(.*)$",
+      "target": "$1",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
     }
   ]
 }
