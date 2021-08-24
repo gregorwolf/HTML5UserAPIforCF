@@ -2,11 +2,12 @@
 QUnit.config.autostart = false;
 
 sap.ui.getCore().attachInit(function () {
-	"use strict";
+  "use strict";
 
-	sap.ui.require([
-		"com/sap/sapmentors/HTML5UserAPIforCF-ui/test/unit/AllTests"
-	], function () {
-		QUnit.start();
-	});
+  sap.ui.require(
+    ["com/sap/sapmentors/html5userapiforcf-ui/test/unit/AllTests"],
+    function () {
+      QUnit.start();
+    }
+  );
 });

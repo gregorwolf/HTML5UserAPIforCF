@@ -1,5 +1,8 @@
-sap.ui.define([
-	"com/sap/sapmentors/HTML5UserAPIforCF-ui/test/unit/controller/Home.controller"
-], function () {
-	"use strict";
-});
+sap.ui.define(
+  [
+    "com/sap/sapmentors/html5userapiforcf-ui/test/unit/controller/Home.controller",
+  ],
+  function () {
+    "use strict";
+  }
+);
