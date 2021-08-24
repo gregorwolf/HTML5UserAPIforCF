@@ -52,7 +52,7 @@
     "sap.ui5": {
         "flexEnabled": false,
         "rootView": {
-            "viewName": "com.sap.sapmentors.HTML5UserAPIforCF-ui.view.Home",
+            "viewName": "com.sap.sapmentors.html5userapiforcf-ui.view.Home",
             "type": "XML",
             "async": true,
             "id": "Home"
@@ -73,7 +73,7 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "com.sap.sapmentors.HTML5UserAPIforCF-ui.i18n.i18n"
+                    "bundleName": "com.sap.sapmentors.html5userapiforcf-ui.i18n.i18n"
                 }
             }
         },
@@ -89,7 +89,7 @@
                 "routerClass": "sap.m.routing.Router",
                 "viewType": "XML",
                 "async": true,
-                "viewPath": "com.sap.sapmentors.HTML5UserAPIforCF-ui.view",
+                "viewPath": "com.sap.sapmentors.html5userapiforcf-ui.view",
                 "controlAggregation": "pages",
                 "controlId": "app",
                 "clearControlAggregation": false

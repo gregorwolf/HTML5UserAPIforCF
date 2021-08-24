@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.sap.sapmentors.HTML5UserAPIforCF-ui.controller.Home" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" displayBlock="true" xmlns="sap.m">
+<mvc:View controllerName="com.sap.sapmentors.html5userapiforcf-ui.controller.Home" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" displayBlock="true" xmlns="sap.m">
 	<Shell id="shell">
 		<App id="app">
 			<pages>
