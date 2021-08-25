@@ -125,7 +125,7 @@
 								</l:BlockLayoutCell>
 								<l:BlockLayoutCell id="Version" width="2" title="Version">
 									<l:content>
-										<Text text="0.0.4" />
+										<Text text="0.0.6" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
