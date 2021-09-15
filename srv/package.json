@@ -1,9 +1,9 @@
 {
 	"name": "html5userapi-srv",
 	"dependencies": {
-		"@sap-cloud-sdk/core": "^1.48.0",
+		"@sap-cloud-sdk/core": "^1.48.1",
 		"@sap/xsenv": "^3.1.1",
-		"@sap/xssec": "^3.2.3",
+		"@sap/xssec": "^3.2.5",
 		"lodash": "^4.17.21",
 		"express": "^4.17.1",
 		"passport": "^0.4.1",
