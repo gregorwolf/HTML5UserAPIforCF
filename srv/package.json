@@ -1,17 +1,17 @@
 {
-	"name": "html5userapi-srv",
-	"dependencies": {
-		"@sap-cloud-sdk/core": "^1.48.1",
-		"@sap/xsenv": "^3.1.1",
-		"@sap/xssec": "^3.2.5",
-		"lodash": "^4.17.21",
-		"express": "^4.17.1",
-		"passport": "^0.4.1",
-		"jwt-decode": "^3.1.2"
-	},
-	"devDependencies": {},
-	"scripts": {
-		"postinstall": "npm dedupe",
-		"start": "node --inspect express.js"
-	}
+  "name": "html5userapi-srv",
+  "dependencies": {
+    "@sap-cloud-sdk/core": "^1.50.0",
+    "@sap/xsenv": "^3.1.1",
+    "@sap/xssec": "^3.2.9",
+    "lodash": "^4.17.21",
+    "express": "^4.17.1",
+    "passport": "^0.5.0",
+    "jwt-decode": "^3.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "postinstall": "npm dedupe",
+    "start": "node --inspect express.js"
+  }
 }
