@@ -69,7 +69,7 @@
       "csrfProtection": true
     },
     {
-      "source": "^logout-page.html$",
+      "source": "^/logout-page.html$",
       "service": "html5-apps-repo-rt",
       "authenticationType": "none"
     },
