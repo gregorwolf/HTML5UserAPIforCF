@@ -7,7 +7,11 @@ sap.ui.define(
       "com.sap.sapmentors.html5userapiforcf-ui.controller.Home",
       {
         onInit: function () {
-          let oManifest = Manifest.load({ manifestUrl: "./manifest.json" });
+          var url = this.getOwnerComponent()
+            .getManifestObject()
+            .resolveUri("./");
+          console.log(url);
+          let oManifest = Manifest.load({ manifestUrl: url + "manifest.json" });
           let version = oManifest.getEntry(
             "/sap.app/applicationVersion/version"
           );
