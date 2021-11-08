@@ -23,6 +23,11 @@
 										<Link text="/api/userInfo" href="api/userInfo" />
 									</l:content>
 								</l:BlockLayoutCell>
+								<l:BlockLayoutCell id="Version" width="2" title="Version">
+									<l:content>
+										<Text id="versionText" text="not loaded" />
+									</l:content>
+								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
 							<l:BlockLayoutRow accentCells="JWT">
 								<l:BlockLayoutCell id="jwtdecode" width="2" title="JWT Decoded">
@@ -121,11 +126,6 @@
 								<l:BlockLayoutCell id="Logout" width="2" title="Logout">
 									<l:content>
 										<Link text="do/logout" href="do/logout" />
-									</l:content>
-								</l:BlockLayoutCell>
-								<l:BlockLayoutCell id="Version" width="2" title="Version">
-									<l:content>
-										<Text text="1.0.1" />
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
