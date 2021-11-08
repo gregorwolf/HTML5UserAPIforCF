@@ -1,29 +1,25 @@
 {
   "name": "html5userapi-ui",
-  "version": "0.0.2",
+  "version": "1.0.1",
   "description": "",
   "dependencies": {},
   "devDependencies": {
+    "@sap/ux-specification": "latest",
+    "@sap/ux-ui5-tooling": "1.4.0",
     "@ui5/cli": "^2.14.0",
-    "npm-watch": "^0.11.0",
-    "rimraf": "~3.0.2",
-    "ui5-middleware-livereload": "^0.5.8",
-    "ui5-middleware-simpleproxy": "^0.7.5",
-    "@sapui5/ts-types": "^1.93.4",
-    "@sap/approuter": "^10.9.1",
-    "@sap/ui5-builder-webide-extension": "^1.1.6",
-    "@sap/html5-repo-mock": "^2.1.0"
+    "@ui5/fs": "^2.0.6",
+    "@ui5/logger": "^2.0.1",
+    "rimraf": "3.0.2",
+    "ui5-task-zipper": "^0.4.7"
   },
   "scripts": {
-    "build": "npm run clean && npm run build:ui5 && npm run zip",
-    "build:ui5": "ui5 build --include-task=generateManifestBundle generateCachebusterInfo",
-    "zip": "cd dist && npx bestzip HTML5Module-content.zip *",
+    "build": "ui5 build preload --clean-dest --config ui5-deploy.yaml --include-task=generateManifestBundle generateCachebusterInfo",
     "clean": "npx rimraf dist",
     "start-local": "export VCAP_SERVICES=`cat default-env.json | jq .VCAP_SERVICES` && node node_modules/@sap/html5-repo-mock/index.js"
   },
   "ui5": {
     "dependencies": [
-      "@sap/ui5-builder-webide-extension"
+      "ui5-task-zipper"
     ]
   }
 }
