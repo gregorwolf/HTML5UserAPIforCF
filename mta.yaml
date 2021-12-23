@@ -37,6 +37,8 @@ modules:
       - name: html5userapi-uaa
       - name: html5userapi-destination-service
       - name: html5userapi-connectivity-service
+    env:
+      USE_JCO: true
 
   - name: html5userapi-ui
     type: approuter.nodejs
