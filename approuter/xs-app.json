@@ -31,6 +31,12 @@
       "destination": "$1"
     },
     {
+      "source": "^/destination-no-auth/([^/]+)/(.*)$",
+      "authenticationType": "none",
+      "target": "$2",
+      "destination": "$1"
+    },
+    {
       "source": "/sap/(.*)$",
       "target": "/sap/$1",
       "destination": "SAP_ABAP_BACKEND"
