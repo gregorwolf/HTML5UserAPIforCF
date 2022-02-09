@@ -46,6 +46,25 @@ modules:
     parameters:
       memory: 256M
       disk-quota: 1024M
+    properties:
+      CORS: >
+        [
+          {
+            "uriPattern":"^/destination-no-auth$",
+            "allowedOrigin":[
+              {
+                "protocol": "https",
+                "host": "localhost",
+                "port": 3000
+              }
+            ],
+            "allowedHeaders": [
+              "Authorization",
+              "Content-Type"
+            ],
+            "allowedCredentials": true
+          }
+        ]
     build-parameters:
       ignore: ["node_modules/"]
     requires:
