@@ -5,6 +5,9 @@
     "logoutEndpoint": "/do/logout",
     "logoutPage": "/comsapsapmentorshtml5userapiforcfui/logout-page.html"
   },
+  "whitelistService": {
+    "endpoint": "/allowlist/service"
+  },
   "routes": [
     {
       "source": "^/user-api(.*)",

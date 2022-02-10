@@ -47,6 +47,13 @@ modules:
       memory: 256M
       disk-quota: 1024M
     properties:
+      CJ_PROTECT_WHITELIST: >
+        [
+          {
+            "protocol": "https",
+            "host": "*.ondemand.com"
+          }
+        ]
       httpHeaders: >
         [
           {
