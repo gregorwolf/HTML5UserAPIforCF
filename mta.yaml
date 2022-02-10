@@ -47,6 +47,18 @@ modules:
       memory: 256M
       disk-quota: 1024M
     properties:
+      httpHeaders: >
+        [
+          {
+            "Access-Control-Allow-Origin": "https://localhost:3000"
+          },
+          {
+            "Access-Control-Allow-Credentials": "true"
+          },
+          {
+            "Access-Control-Allow-Headers": "Authorization,Content-Type"
+          }
+        ]
       CORS: >
         [
           {
