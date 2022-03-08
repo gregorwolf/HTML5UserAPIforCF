@@ -2,12 +2,12 @@
   "name": "html5userapi-srv",
   "dependencies": {
     "@sap-cloud-sdk/core": "^1.54.0",
-    "@sap/xsenv": "^3.2.0",
-    "@sap/xssec": "^3.2.12",
+    "@sap/xsenv": "^3.2.1",
+    "@sap/xssec": "^3.2.13",
+    "express": "^4.17.3",
+    "jwt-decode": "^3.1.2",
     "lodash": "^4.17.21",
-    "express": "^4.17.2",
-    "passport": "^0.5.2",
-    "jwt-decode": "^3.1.2"
+    "passport": "^0.5.2"
   },
   "devDependencies": {},
   "scripts": {

@@ -4,15 +4,15 @@
   "description": "",
   "dependencies": {},
   "devDependencies": {
-    "@sap/approuter": "^10.12.0",
-    "@sap/ux-specification": "latest",
-    "@sap/ux-ui5-tooling": "1.4.7",
+    "@sap/approuter": "^10.13.2",
     "@sap/html5-repo-mock": "^2.1.0",
-    "@ui5/cli": "^2.14.4",
+    "@sap/ux-specification": "^1.96.5",
+    "@sap/ux-ui5-tooling": "1.4.7",
+    "@ui5/cli": "^2.14.6",
     "@ui5/fs": "^2.0.6",
     "@ui5/logger": "^2.0.1",
     "rimraf": "3.0.2",
-    "ui5-task-zipper": "^0.4.7"
+    "ui5-task-zipper": "^0.4.9"
   },
   "scripts": {
     "start": "ui5 serve --config ui5-deploy.yaml",
