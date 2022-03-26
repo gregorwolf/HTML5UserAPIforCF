@@ -16,7 +16,7 @@
             <dependency>
                 <groupId>com.sap.cloud.sdk</groupId>
                 <artifactId>sdk-bom</artifactId>
-                <version>3.60.0</version>
+                <version>3.66.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -47,7 +47,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-pmd-plugin</artifactId>
-                    <version>3.14.0</version>
+                    <version>3.16.0</version>
                     <configuration>
                         <rulesets>
                             <ruleset>rulesets/cloud-sdk-qualities.xml</ruleset>
@@ -58,7 +58,7 @@
                         <dependency>
                             <groupId>com.sap.cloud.sdk.quality</groupId>
                             <artifactId>pmd-rules</artifactId>
-                            <version>3.43.0</version>
+                            <version>3.66.0</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -68,7 +68,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.0.0-M3</version>
+                <version>3.0.0</version>
                 <executions>
                     <execution>
                         <id>SAP Cloud SDK Project Structure Checks</id>
