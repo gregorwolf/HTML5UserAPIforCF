@@ -94,6 +94,12 @@
       "cacheControl": "no-cache, no-store, must-revalidate"
     },
     {
+      "source": "^/html5userapiforcf/(.*)$",
+      "target": "/comsapsapmentorshtml5userapiforcfui/$1",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
+    },
+    {
       "source": "^(.*)$",
       "target": "$1",
       "service": "html5-apps-repo-rt",
