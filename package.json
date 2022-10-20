@@ -29,6 +29,6 @@
     "html5:push": "cf html5-push -r HTML5Module/dist",
     "debug:cf": "cf ssh html5userapi-srv -N -T -L 9229:127.0.0.1:9229",
     "uaa:update": "cf update-service html5userapi-uaa -c xs-security.json",
-    "undeploy:cf": "cf undeploy html5userapi --delete-services --delete-service-brokers --delete-services-keys"
+    "undeploy:cf": "cf undeploy html5userapi --delete-service-keys --delete-services --delete-service-brokers"
   }
 }
