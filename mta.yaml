@@ -52,10 +52,22 @@ modules:
           {
             "protocol": "https",
             "host": "*.ondemand.com"
+          },
+          {
+            "protocol": "https",
+            "host": "*.hcs.cloud.sap"
           }
         ]
+      COOKIES: >
+        { "SameSite":"None" }
       httpHeaders: >
         [
+          {
+            "X-Frame-Options": "DENY"
+          },
+          {
+            "Content-Security-Policy": "frame-ancestors iframe frame object embed 'self' https://*.hcs.cloud.sap;"
+          },
           {
             "Access-Control-Allow-Origin": "https://localhost:3000"
           },
