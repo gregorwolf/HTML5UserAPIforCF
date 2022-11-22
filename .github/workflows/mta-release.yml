@@ -1,0 +1,27 @@
+name: mta-release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: Upload Release Asset
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download CF artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: mta-build-push.yml
+          workflow_conclusion: success
+          name: mta
+      - name: Display structure of downloaded files
+        run: ls -R
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            html5userapi.mtar
