@@ -12,12 +12,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Read envirnoment variables
-        run: env
-      - name: Read current working directory
+      - name: pwd
         run: pwd
-      - name: Read current working directory content
-        run: ls -la
-      - name: Build mta
-        run: |
-          docker run -t --rm -v "$(pwd):/project" devxci/mbtci:latest mbt build -p=cf
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+      - name: Check node version
+        run: node --version
+      - name: Install MTA Build Tool
+        run: npm install -g mbt
+      - name: Install Packages
+        run: npm install ci
+      - name: MTA build
+        uses: SAP/project-piper-action@master
+        with:
+          command: mtaBuild
+      - name: Upload archive file
+        uses: actions/upload-artifact@v2
+        with:
+           name: mta
+           path: html5userapi.mtar

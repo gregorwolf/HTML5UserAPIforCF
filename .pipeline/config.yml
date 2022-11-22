@@ -1,0 +1,5 @@
+general:
+steps:
+  mtaBuild:
+    platform: 'CF'
+    mtarName: html5userapi.mtar
