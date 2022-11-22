@@ -31,7 +31,7 @@ jobs:
         with:
           command: mtaBuild
       - name: Upload archive file
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
            name: mta
            path: html5userapi.mtar
