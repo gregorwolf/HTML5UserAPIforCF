@@ -4,6 +4,9 @@
   "description": "HTML5 User API for Cloud Foundry",
   "repository": "https://github.com/gregorwolf/HTML5UserAPIforCF.git ",
   "license": "Apache 2.0",
+  "engines": {
+    "node": "^16"
+  },
   "dependencies": {
     "@html5userapi-cf/approuter": "file:approuter",
     "@html5userapi-cf/HTML5Module": "file:HTML5Module",

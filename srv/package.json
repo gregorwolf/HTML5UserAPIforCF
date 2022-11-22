@@ -1,5 +1,8 @@
 {
   "name": "html5userapi-srv",
+  "engines": {
+    "node": "^16"
+  },
   "dependencies": {
     "@sap-cloud-sdk/core": "^1.54.2",
     "@sap/xsenv": "^3.3.2",
