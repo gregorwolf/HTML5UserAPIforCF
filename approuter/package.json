@@ -6,7 +6,7 @@
     "node": "^16"
   },
   "dependencies": {
-    "@sap/approuter": "^13.1.0"
+    "@sap/approuter": "^13.1.1"
   },
   "scripts": {
     "start": "node ./approuter-start.js"
