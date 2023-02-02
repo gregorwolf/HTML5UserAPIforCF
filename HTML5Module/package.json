@@ -1,6 +1,6 @@
 {
   "name": "html5userapi-ui",
-  "version": "1.1.17",
+  "version": "1.1.19",
   "description": "",
   "engines": {
     "node": "^16"
@@ -9,8 +9,8 @@
   "devDependencies": {
     "@sap/approuter": "^13.1.1",
     "@sap/html5-repo-mock": "^2.1.1",
-    "@sap/ux-specification": "^1.102.15",
-    "@sap/ux-ui5-tooling": "^1.8.5",
+    "@sap/ux-specification": "^1.102.16",
+    "@sap/ux-ui5-tooling": "^1.8.6",
     "@ui5/cli": "^2.14.17",
     "@ui5/fs": "^2.0.6",
     "@ui5/logger": "^2.0.1",
