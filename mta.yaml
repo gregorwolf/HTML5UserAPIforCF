@@ -162,7 +162,8 @@ modules:
     - name: html5userapi-connectivity-service
     parameters:
       content:
-        subaccount:
+        instance:
+          existing_destinations_policy: update
           destinations:
           - Name: html5userapi-repo-host
             ServiceInstanceName: html5userapi-repo-host
@@ -177,7 +178,6 @@ modules:
             Name: html5userapi-uaa-apiaccess
             ServiceInstanceName: html5userapi-uaa-apiaccess
             ServiceKeyName: html5userapi-uaa-apiaccess-key
-          existing_destinations_policy: update
     build-parameters:
       no-source: true
 
@@ -200,7 +200,7 @@ resources:
       service: destination
       config:
         init_data:
-          subaccount:
+          instance:
             existing_destinations_policy: update
             destinations:
               - Name: html5userapi-srv
