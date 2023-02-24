@@ -14,6 +14,7 @@ modules:
     parameters:
       memory: 256M
       disk-quota: 1024M
+      stack: cflinuxfs4
     provides:
       - name: srv_api
         properties:
@@ -29,6 +30,7 @@ modules:
     parameters:
       memory: 512M
       disk-quota: 1024M
+      stack: cflinuxfs4
     provides:
       - name: srv_java_api
         properties:
@@ -46,6 +48,7 @@ modules:
     parameters:
       memory: 256M
       disk-quota: 1024M
+      stack: cflinuxfs4
     properties:
       CJ_PROTECT_WHITELIST: >
         [
