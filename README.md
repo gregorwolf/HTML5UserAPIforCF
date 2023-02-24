@@ -6,13 +6,19 @@ This project provides a simple MTA application which serves links to a Node.js b
 
 ### Prerequisite
 
-- You have a [SAP Cloud Platform Trial account](https://hanatrial.ondemand.com/)
-- The [Cloud MTA Build Tool (MBT)](https://sap.github.io/cloud-mta-build-tool/) is installed
-- The [Cloud Foundry commandline tool](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) is installed
+If you want to deploy the latest released version:
+
+- You have a [SAP Business Technology Platform Platform Trial](https://hanatrial.ondemand.com/), [Free Tier or productive account](https://cockpit.eu10.hana.ondemand.com/)
+- The [Cloud Foundry command line tool](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) is installed
 - The [MultiApps CF CLI Plugin](https://github.com/cloudfoundry-incubator/multiapps-cli-plugin) is installed
-- You've connected using `cf login`to your trial account
+- You've connected using `cf login`to your BTP subaccount
 - You've connected a [SAP Cloud Connector](https://tools.hana.ondemand.com/#cloud) to your subaccount
-- Principal Propagation is setup in the Cloud Connector to the ABAP Backend
+- [Principal Propagation is setup in the Cloud Connector to the ABAP Backend](https://blogs.sap.com/2017/06/22/how-to-guide-principal-propagation-in-an-https-scenario/)
+
+If you want to build the current state of the repository:
+
+- You have the Node.JS version defined in .nvmrc installed
+- The [Cloud MTA Build Tool (MBT)](https://sap.github.io/cloud-mta-build-tool/) is installed
 
 ### Preperation
 
@@ -58,10 +64,18 @@ As described in the answer to [B1 Service Layer Login Credentials as Destination
 username: {"UserName": "manager", "CompanyDB": "SBODEMOUS"}
 password: 1234
 ```
-### Build
+
+### Deploy the release version
+
+- Download the mtar file provided at [releases](https://github.com/gregorwolf/HTML5UserAPIforCF/releases)
+- run the command `cf deploy <path and filename of the mtar>`
+
+### Build and Deploy
+
+To build and deploy the project run:
 
 `npm run build:cf`
 
-### Deploy
+and then
 
 `npm run deploy:cf`
