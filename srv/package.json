@@ -1,7 +1,7 @@
 {
   "name": "html5userapi-srv",
   "engines": {
-    "node": "^16"
+    "node": "^18"
   },
   "dependencies": {
     "@sap-cloud-sdk/http-client": "^2.14.0",

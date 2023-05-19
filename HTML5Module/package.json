@@ -3,7 +3,7 @@
   "version": "1.1.19",
   "description": "",
   "engines": {
-    "node": "^16"
+    "node": "^18"
   },
   "dependencies": {},
   "devDependencies": {
