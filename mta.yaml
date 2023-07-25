@@ -21,6 +21,7 @@ modules:
           url: ${default-url}
     requires:
       - name: html5userapi-uaa
+      - name: html5userapi-logging
       - name: html5userapi-destination-service
       - name: html5userapi-connectivity-service
 
@@ -37,6 +38,7 @@ modules:
           url: ${default-url}
     requires:
       - name: html5userapi-uaa
+      - name: html5userapi-logging
       - name: html5userapi-destination-service
       - name: html5userapi-connectivity-service
     properties:
@@ -105,6 +107,7 @@ modules:
       - name: html5userapi-destination-service
       - name: html5userapi-connectivity-service
       - name: html5userapi-uaa
+      - name: html5userapi-logging
       - name: html5userapi-repo-runtime
       - name: srv_api
         group: destinations
@@ -240,3 +243,8 @@ resources:
     parameters:
       service-plan: app-runtime
       service: html5-apps-repo
+  - name: html5userapi-logging
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: application-logs
+      service-plan: lite
