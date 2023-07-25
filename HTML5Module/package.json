@@ -11,10 +11,10 @@
     "@sap/html5-repo-mock": "^2",
     "@sap/ux-specification": "^1.108.2",
     "@sap/ux-ui5-tooling": "^1",
-    "@ui5/cli": "^2",
-    "@ui5/fs": "^2",
+    "@ui5/cli": "^3",
+    "@ui5/fs": "^3",
     "@ui5/logger": "^3",
-    "rimraf": "4.1.2",
+    "rimraf": "^5",
     "ui5-task-zipper": "^0"
   },
   "scripts": {
