@@ -1,16 +1,13 @@
 ID: html5userapi
-_schema-version: '2.1'
+_schema-version: "2.1"
 version: 0.2.2
 parameters:
   enable-parallel-deployments: true
 
 modules:
-
   - name: html5userapi-srv
     type: nodejs
     path: srv
-    build-parameters:
-      ignore: ["node_modules/"]
     parameters:
       memory: 256M
       disk-quota: 1024M
@@ -112,17 +109,17 @@ modules:
       - name: srv_api
         group: destinations
         properties:
-            forwardAuthToken: true
-            strictSSL: false
-            name: html5userapi-srv
-            url: ~{url}
+          forwardAuthToken: true
+          strictSSL: false
+          name: html5userapi-srv
+          url: ~{url}
       - name: srv_java_api
         group: destinations
         properties:
-            forwardAuthToken: true
-            strictSSL: false
-            name: html5userapi-srv-java
-            url: ~{url}
+          forwardAuthToken: true
+          strictSSL: false
+          name: html5userapi-srv-java
+          url: ~{url}
   - name: html5userapi-deployer
     type: com.sap.application.content
     path: .
@@ -150,40 +147,40 @@ modules:
   - name: html5userapi-destination-content
     type: com.sap.application.content
     requires:
-    - name: html5userapi-uaa
-      parameters:
-        service-key:
-          name: html5userapi-uaa-key
-    - name: html5userapi-repo-host
-      parameters:
-        service-key:
-          name: html5userapi-repo-host-key
-    - name: html5userapi-uaa-apiaccess
-      parameters:
-        service-key:
-          name: html5userapi-uaa-apiaccess-key
-    - name: html5userapi-destination-service
-      parameters:
-        content-target: true
-    - name: html5userapi-connectivity-service
+      - name: html5userapi-uaa
+        parameters:
+          service-key:
+            name: html5userapi-uaa-key
+      - name: html5userapi-repo-host
+        parameters:
+          service-key:
+            name: html5userapi-repo-host-key
+      - name: html5userapi-uaa-apiaccess
+        parameters:
+          service-key:
+            name: html5userapi-uaa-apiaccess-key
+      - name: html5userapi-destination-service
+        parameters:
+          content-target: true
+      - name: html5userapi-connectivity-service
     parameters:
       content:
         instance:
           existing_destinations_policy: update
           destinations:
-          - Name: html5userapi-repo-host
-            ServiceInstanceName: html5userapi-repo-host
-            ServiceKeyName: html5userapi-repo-host-key
-            sap.cloud.service: cloud.service
-          - Authentication: OAuth2UserTokenExchange
-            Name: html5userapi-uaa
-            ServiceInstanceName: html5userapi-uaa
-            ServiceKeyName: html5userapi-uaa-key
-            sap.cloud.service: cloud.service
-          - Authentication: OAuth2ClientCredentials
-            Name: html5userapi-uaa-apiaccess
-            ServiceInstanceName: html5userapi-uaa-apiaccess
-            ServiceKeyName: html5userapi-uaa-apiaccess-key
+            - Name: html5userapi-repo-host
+              ServiceInstanceName: html5userapi-repo-host
+              ServiceKeyName: html5userapi-repo-host-key
+              sap.cloud.service: cloud.service
+            - Authentication: OAuth2UserTokenExchange
+              Name: html5userapi-uaa
+              ServiceInstanceName: html5userapi-uaa
+              ServiceKeyName: html5userapi-uaa-key
+              sap.cloud.service: cloud.service
+            - Authentication: OAuth2ClientCredentials
+              Name: html5userapi-uaa-apiaccess
+              ServiceInstanceName: html5userapi-uaa-apiaccess
+              ServiceKeyName: html5userapi-uaa-apiaccess-key
     build-parameters:
       no-source: true
 
