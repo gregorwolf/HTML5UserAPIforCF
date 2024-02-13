@@ -26,6 +26,8 @@ jobs:
       - name: Install MTA Build Tool
         run: npm install -g mbt
       - name: Install Packages
+        env:
+          SAP_NPM_AUTH: ${{ secrets.SAP_NPM_AUTH }}
         run: npm install ci
       - name: MTA build
         uses: SAP/project-piper-action@master
