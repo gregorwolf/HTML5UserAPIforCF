@@ -78,4 +78,6 @@ To build and deploy the project run:
 
 and then
 
-`npm run deploy:cf`
+```
+npm run deploy:cf
+```
