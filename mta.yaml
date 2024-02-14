@@ -22,24 +22,24 @@ modules:
       - name: html5userapi-destination-service
       - name: html5userapi-connectivity-service
 
-  - name: html5userapi-srv-java
-    type: java
-    path: srv-java/application
-    parameters:
-      memory: 512M
-      disk-quota: 1024M
-      stack: cflinuxfs4
-    provides:
-      - name: srv_java_api
-        properties:
-          url: ${default-url}
-    requires:
-      - name: html5userapi-uaa
-      - name: html5userapi-logging
-      - name: html5userapi-destination-service
-      - name: html5userapi-connectivity-service
-    properties:
-      USE_JCO: true
+  # - name: html5userapi-srv-java
+  #   type: java
+  #   path: srv-java/application
+  #   parameters:
+  #     memory: 512M
+  #     disk-quota: 1024M
+  #     stack: cflinuxfs4
+  #   provides:
+  #     - name: srv_java_api
+  #       properties:
+  #         url: ${default-url}
+  #   requires:
+  #     - name: html5userapi-uaa
+  #     - name: html5userapi-logging
+  #     - name: html5userapi-destination-service
+  #     - name: html5userapi-connectivity-service
+  #   properties:
+  #     USE_JCO: true
 
   - name: html5userapi-ui
     type: approuter.nodejs
@@ -113,13 +113,13 @@ modules:
           strictSSL: false
           name: html5userapi-srv
           url: ~{url}
-      - name: srv_java_api
-        group: destinations
-        properties:
-          forwardAuthToken: true
-          strictSSL: false
-          name: html5userapi-srv-java
-          url: ~{url}
+      # - name: srv_java_api
+      #   group: destinations
+      #   properties:
+      #     forwardAuthToken: true
+      #     strictSSL: false
+      #     name: html5userapi-srv-java
+      #     url: ~{url}
   - name: html5userapi-deployer
     type: com.sap.application.content
     path: .
@@ -214,17 +214,17 @@ resources:
                 URL: ~{srv_api/url}
                 HTML5.DynamicDestination: true
                 HTML5.ForwardAuthToken: true
-              - Name: html5userapi-srv-java
-                Description: html5userapi Java backend service
-                Authentication: NoAuthentication
-                ProxyType: Internet
-                Type: HTTP
-                URL: ~{srv_java_api/url}
-                HTML5.DynamicDestination: true
-                HTML5.ForwardAuthToken: true
+#              - Name: html5userapi-srv-java
+#                Description: html5userapi Java backend service
+#                Authentication: NoAuthentication
+#                ProxyType: Internet
+#                Type: HTTP
+#                URL: ~{srv_java_api/url}
+#                HTML5.DynamicDestination: true
+#                HTML5.ForwardAuthToken: true
     requires:
       - name: srv_api
-      - name: srv_java_api
+#      - name: srv_java_api
   - name: html5userapi-connectivity-service
     parameters:
       service-plan: lite

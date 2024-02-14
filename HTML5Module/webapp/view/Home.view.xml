@@ -93,7 +93,10 @@
 							<l:BlockLayoutRow accentCells="BackendRFC">
 								<l:BlockLayoutCell id="RFC" width="2" title="Backend via Java RFC">
 									<l:content>
+										<Text>Disabled until security fix is implemented</Text>
+										<!-- 
 										<Link text="/rfc?name=USER_NAME_GET" href="rfc?name=USER_NAME_GET" />
+										-->
 									</l:content>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
