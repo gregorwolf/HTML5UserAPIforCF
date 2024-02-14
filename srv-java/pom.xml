@@ -1,5 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -16,7 +18,7 @@
             <dependency>
                 <groupId>com.sap.cloud.sdk</groupId>
                 <artifactId>sdk-bom</artifactId>
-                <version>3.66.0</version>
+                <version>3.78.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -86,7 +88,8 @@
                                 <requireProperty>
                                     <property>project.artifactId</property>
                                     <regex>[^_]+</regex>
-                                    <regexMessage>"The artifactId should not contain underscores (_) as this causes issues when deploying to Cloud Foundry."</regexMessage>
+                                    <regexMessage>"The artifactId should not contain underscores (_)
+                                        as this causes issues when deploying to Cloud Foundry."</regexMessage>
                                 </requireProperty>
                                 <reactorModuleConvergence />
                             </rules>
