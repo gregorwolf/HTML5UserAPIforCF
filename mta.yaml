@@ -1,6 +1,6 @@
 ID: html5userapi
 _schema-version: "2.1"
-version: 0.4.1
+version: 0.4.2
 parameters:
   enable-parallel-deployments: true
 
@@ -214,17 +214,17 @@ resources:
                 URL: ~{srv_api/url}
                 HTML5.DynamicDestination: true
                 HTML5.ForwardAuthToken: true
-#              - Name: html5userapi-srv-java
-#                Description: html5userapi Java backend service
-#                Authentication: NoAuthentication
-#                ProxyType: Internet
-#                Type: HTTP
-#                URL: ~{srv_java_api/url}
-#                HTML5.DynamicDestination: true
-#                HTML5.ForwardAuthToken: true
+    #              - Name: html5userapi-srv-java
+    #                Description: html5userapi Java backend service
+    #                Authentication: NoAuthentication
+    #                ProxyType: Internet
+    #                Type: HTTP
+    #                URL: ~{srv_java_api/url}
+    #                HTML5.DynamicDestination: true
+    #                HTML5.ForwardAuthToken: true
     requires:
       - name: srv_api
-#      - name: srv_java_api
+  #      - name: srv_java_api
   - name: html5userapi-connectivity-service
     parameters:
       service-plan: lite
