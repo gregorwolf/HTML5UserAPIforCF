@@ -1,6 +1,6 @@
 {
   "name": "html5userapi-cf",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "HTML5 User API for Cloud Foundry",
   "repository": "https://github.com/gregorwolf/HTML5UserAPIforCF.git ",
   "license": "Apache 2.0",
