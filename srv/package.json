@@ -3,8 +3,10 @@
   "engines": {
     "node": "^20"
   },
+  "dependenciesx": {
+    "@sap/fesr-to-otel-js": "https://73555000100200018064.npmsrv.cdn.repositories.cloud.sap/@sap/fesr-to-otel-js/-/fesr-to-otel-js-1.5.3.tgz"
+  },
   "dependencies": {
-    "@sap/fesr-to-otel-js": "https://73555000100200018064.npmsrv.cdn.repositories.cloud.sap/@sap/fesr-to-otel-js/-/fesr-to-otel-js-1.5.3.tgz",
     "@sap-cloud-sdk/http-client": "^3.10.0",
     "@sap/xsenv": "^4.2.0",
     "@sap/xssec": "^3.6.1",
