@@ -1,6 +1,6 @@
 // load modules
 const express = require("express");
-const fesr = require("@sap/fesr-to-otel-js");
+// const fesr = require("@sap/fesr-to-otel-js");
 
 // For authentication test
 const passport = require("passport");
@@ -31,7 +31,7 @@ function getJWT(req) {
 (async () => {
   // create new app
   const app = express();
-  fesr.registerFesrEndpoint(app);
+  // fesr.registerFesrEndpoint(app);
   // Authentication using JWT
   await app.use(passport.initialize());
   await app.use(passport.authenticate("JWT", { session: false }));
