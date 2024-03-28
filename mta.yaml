@@ -155,10 +155,10 @@ modules:
         parameters:
           service-key:
             name: html5userapi-repo-host-key
-      - name: html5userapi-uaa-apiaccess
-        parameters:
-          service-key:
-            name: html5userapi-uaa-apiaccess-key
+      #      - name: html5userapi-uaa-apiaccess
+      #        parameters:
+      #          service-key:
+      #            name: html5userapi-uaa-apiaccess-key
       - name: html5userapi-destination-service
         parameters:
           content-target: true
@@ -177,10 +177,10 @@ modules:
               ServiceInstanceName: html5userapi-uaa
               ServiceKeyName: html5userapi-uaa-key
               sap.cloud.service: cloud.service
-            - Authentication: OAuth2ClientCredentials
-              Name: html5userapi-uaa-apiaccess
-              ServiceInstanceName: html5userapi-uaa-apiaccess
-              ServiceKeyName: html5userapi-uaa-apiaccess-key
+    #            - Authentication: OAuth2ClientCredentials
+    #              Name: html5userapi-uaa-apiaccess
+    #              ServiceInstanceName: html5userapi-uaa-apiaccess
+    #              ServiceKeyName: html5userapi-uaa-apiaccess-key
     build-parameters:
       no-source: true
 
@@ -191,11 +191,11 @@ resources:
       service-plan: application
       service: xsuaa
     type: org.cloudfoundry.managed-service
-  - name: html5userapi-uaa-apiaccess
-    type: org.cloudfoundry.managed-service
-    parameters:
-      service-plan: apiaccess
-      service: xsuaa
+  #  - name: html5userapi-uaa-apiaccess
+  #    type: org.cloudfoundry.managed-service
+  #    parameters:
+  #      service-plan: apiaccess
+  #      service: xsuaa
   - name: html5userapi-destination-service
     type: org.cloudfoundry.managed-service
     parameters:
