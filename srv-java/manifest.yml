@@ -2,16 +2,18 @@
 applications:
 
 - name: rfctest
-  memory: 1024M
+  memory: 1500M
   timeout: 300
   random-route: true
-  path: application/target/rfctest-application.war
+  path: application/target/rfctest-application.jar
   buildpacks:
     - sap_java_buildpack
   env:
-    TARGET_RUNTIME: tomee7
-    SET_LOGGING_LEVEL: '{ROOT: INFO, com.sap.cloud.sdk: INFO}'
+    TARGET_RUNTIME: main
+    SPRING_PROFILES_ACTIVE: 'cloud'
     JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:128m..'
+    JBP_CONFIG_COMPONENTS: 'jres: [''com.sap.xs.java.buildpack.jre.SAPMachineJRE'']'
+    JBP_CONFIG_SAP_MACHINE_JRE: '{ use_offline_repository: false, version: 17.0.5 }'
 #  services:
 #  - my-application-logs
 #  - my-xsuaa

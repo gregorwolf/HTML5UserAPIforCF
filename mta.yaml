@@ -1,6 +1,6 @@
 ID: html5userapi
 _schema-version: "2.1"
-version: 0.4.4
+version: 0.5.0
 parameters:
   enable-parallel-deployments: true
 
@@ -9,7 +9,7 @@ modules:
     type: nodejs
     path: srv
     parameters:
-      memory: 256M
+      memory: 128M
       disk-quota: 1024M
       stack: cflinuxfs4
     provides:
@@ -22,30 +22,38 @@ modules:
       - name: html5userapi-destination-service
       - name: html5userapi-connectivity-service
 
-  # - name: html5userapi-srv-java
-  #   type: java
-  #   path: srv-java/application
-  #   parameters:
-  #     memory: 512M
-  #     disk-quota: 1024M
-  #     stack: cflinuxfs4
-  #   provides:
-  #     - name: srv_java_api
-  #       properties:
-  #         url: ${default-url}
-  #   requires:
-  #     - name: html5userapi-uaa
-  #     - name: html5userapi-logging
-  #     - name: html5userapi-destination-service
-  #     - name: html5userapi-connectivity-service
-  #   properties:
-  #     USE_JCO: true
+  - name: html5userapi-srv-java
+    type: java
+    path: srv-java/application
+    parameters:
+      memory: 768M
+      disk-quota: 2024M
+      stack: cflinuxfs4
+    provides:
+      - name: srv_java_api
+        properties:
+          url: ${default-url}
+    requires:
+      - name: html5userapi-uaa
+      - name: html5userapi-logging
+      - name: html5userapi-destination-service
+      - name: html5userapi-connectivity-service
+    properties:
+      SPRING_PROFILES_ACTIVE: cloud
+      JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jre.SAPMachineJRE']"
+      JBP_CONFIG_SAP_MACHINE_JRE: "{ use_offline_repository: false, version: 17.+ }"
+      USE_JCO: true
+    build-parameters:
+      builder: custom
+      commands:
+        - mvn clean package -DskipTests=true
+      build-result: target/*.jar
 
   - name: html5userapi-ui
     type: approuter.nodejs
     path: approuter
     parameters:
-      memory: 256M
+      memory: 128M
       disk-quota: 1024M
       stack: cflinuxfs4
     properties:
@@ -128,12 +136,12 @@ modules:
         parameters:
           content-target: true
     build-parameters:
-      build-result: resources
+      build-result: target
       requires:
         - artifacts:
             - dist/HTML5Module-content.zip
           name: html5userapi-HTML5Module
-          target-path: resources/
+          target-path: target/
 
   - name: html5userapi-HTML5Module
     type: html5

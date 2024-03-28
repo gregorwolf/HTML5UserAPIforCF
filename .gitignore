@@ -21,7 +21,7 @@ cp.project.properties.json
 Makefile*
 dist/
 *-env.json
-resources/
 .mta/
 target
 .env
+*.jcoDestination
