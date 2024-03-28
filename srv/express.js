@@ -8,7 +8,7 @@ const xsenv = require("@sap/xsenv");
 xsenv.loadEnv();
 const JWTStrategy = require("@sap/xssec").JWTStrategy;
 const services = xsenv.getServices({ xsuaa: { tags: "xsuaa" } });
-const jwtDecode = require("jwt-decode");
+const { jwtDecode } = require("jwt-decode");
 passport.use(new JWTStrategy(services.xsuaa));
 const { executeHttpRequest } = require("@sap-cloud-sdk/http-client");
 
