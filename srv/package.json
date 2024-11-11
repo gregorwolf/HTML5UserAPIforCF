@@ -7,10 +7,13 @@
     "@sap/fesr-to-otel-js": "https://73555000100200018064.npmsrv.cdn.repositories.cloud.sap/@sap/fesr-to-otel-js/-/fesr-to-otel-js-1.5.3.tgz"
   },
   "dependencies": {
-    "@sap-cloud-sdk/http-client": "^3.17.0",
-    "@sap/xsenv": "^5.2.0",
-    "@sap/xssec": "^4.2.1",
-    "express": "^4.19.2",
+    "@sap-cloud-sdk/connectivity": "^3",
+    "@sap-cloud-sdk/http-client": "^3",
+    "@sap-cloud-sdk/mail-client": "^3",
+    "@sap-cloud-sdk/util": "^3",
+    "@sap/xsenv": "^5.4.0",
+    "@sap/xssec": "^4.2.7",
+    "express": "^4.21.1",
     "jwt-decode": "^4.0.0",
     "lodash": "^4.17.21",
     "passport": "^0.7.0"

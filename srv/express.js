@@ -6,35 +6,27 @@ const express = require("express");
 const passport = require("passport");
 const xsenv = require("@sap/xsenv");
 xsenv.loadEnv();
-const JWTStrategy = require("@sap/xssec").JWTStrategy;
+const { XssecPassportStrategy, XsuaaService } = require("@sap/xssec");
 const services = xsenv.getServices({ xsuaa: { tags: "xsuaa" } });
+const authService = new XsuaaService(services.xsuaa);
+// console.log(services.xsuaa);
 const { jwtDecode } = require("jwt-decode");
-passport.use(new JWTStrategy(services.xsuaa));
 const { executeHttpRequest } = require("@sap-cloud-sdk/http-client");
+const { sendMail } = require("@sap-cloud-sdk/mail-client");
+const { retrieveJwt, getDestination } = require("@sap-cloud-sdk/connectivity");
 
 // config
 const host = process.env.HOST || "0.0.0.0";
 const port = process.env.PORT || 4004;
-
-function getDestination(req) {
-  return {
-    destinationName: process.env.DESTINATION || "SAP_ABAP_BACKEND",
-    jwt: getJWT(req),
-  };
-}
-
-function getJWT(req) {
-  const jwt = /^Bearer (.*)$/.exec(req.headers.authorization)[1];
-  return jwt;
-}
 
 (async () => {
   // create new app
   const app = express();
   // fesr.registerFesrEndpoint(app);
   // Authentication using JWT
-  await app.use(passport.initialize());
-  await app.use(passport.authenticate("JWT", { session: false }));
+  passport.use(new XssecPassportStrategy(authService));
+  app.use(passport.initialize());
+  app.use(passport.authenticate("JWT", { session: false }));
 
   await app.get("/api/userInfo", function (req, res) {
     res.header("Content-Type", "application/json");
@@ -43,7 +35,7 @@ function getJWT(req) {
 
   await app.get("/api/jwt", function (req, res) {
     res.header("Content-Type", "application/json");
-    res.send(JSON.stringify({ JWT: getJWT(req) }));
+    res.send(JSON.stringify({ JWT: retrieveJwt(req) }));
   });
   await app.get("/api/jwtdecode", function (req, res) {
     if (!req.user) {
@@ -52,7 +44,7 @@ function getJWT(req) {
     } else {
       res.statusCode = 200;
       res.header("Content-Type", "application/json");
-      res.end(`${JSON.stringify(jwtDecode(getJWT(req)))}`);
+      res.end(`${JSON.stringify(jwtDecode(retrieveJwt(req)))}`);
     }
   });
 
@@ -78,7 +70,10 @@ function getJWT(req) {
   await app.get("/api/bc/ping", async function (req, res) {
     try {
       const resultServiceCollection = await executeHttpRequest(
-        getDestination(req),
+        {
+          destinationName: process.env.DESTINATION || "SAP_ABAP_BACKEND",
+          jwt: retrieveJwt(req),
+        },
         {
           method: "get",
           url: "/sap/bc/ping",
@@ -91,6 +86,46 @@ function getJWT(req) {
         message += " Root Cause: " + error.rootCause.message;
       }
       res.send(message);
+    }
+  });
+
+  await app.get("/api/sendmail", async function (req, res) {
+    const from = req.query.from || "sender@dummy.com";
+    const to = req.query.to || "receiver@dummy.com";
+    const destination = req.query.destination || "inbucket";
+    console.log("Destination to send mail: " + destination);
+    try {
+      const mailConfig = {
+        from,
+        to,
+        subject: "Test from HTML5UserAPIforCF",
+        text: "Test Body from HTML5UserAPIforCF",
+      };
+      console.log("Mail Config: " + JSON.stringify(mailConfig));
+      const resolvedDestination = await getDestination({
+        destinationName: destination,
+        jwt: retrieveJwt(req),
+      });
+
+      const mailClientOptions = {};
+      // mail. properties allow only lowercase
+      if (
+        resolvedDestination.originalProperties[
+          "mail.clientoptions.ignoretls"
+        ] === "true"
+      ) {
+        mailClientOptions.ignoreTLS = true;
+      }
+      console.log("Mail Client Options: " + JSON.stringify(mailClientOptions));
+      // use sendmail as you should use it in nodemailer
+      const result = await sendMail(
+        { destinationName: destination, jwt: retrieveJwt(req) },
+        [mailConfig],
+        mailClientOptions
+      );
+      res.send(JSON.stringify(result));
+    } catch (error) {
+      res.send(error);
     }
   });
 
