@@ -7,7 +7,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@sap/approuter": "^16",
+    "@sap/approuter": "^17",
     "@sap/html5-repo-mock": "^2",
     "@sap/ux-specification": "^1.108.2",
     "@sap/ux-ui5-tooling": "^1",
