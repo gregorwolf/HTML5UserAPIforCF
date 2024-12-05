@@ -52,6 +52,12 @@
       "destination": "SAP_ABAP_BACKEND"
     },
     {
+      "source": "^/sap_basic_auth/(.*)$",
+      "target": "/sap/$1",
+      "authenticationType": "basic",
+      "destination": "SAP_ABAP_BACKEND"
+    },
+    {
       "source": "^/sap_basic/(.*)$",
       "target": "/sap/$1",
       "destination": "SAP_ABAP_BACKEND_BASIC_AUTH"

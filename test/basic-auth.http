@@ -1,0 +1,19 @@
+###
+GET {{$dotenv approuter_url}}/sap_basic_auth/bc/ping
+Authorization: Basic {{$dotenv username}}:{{$dotenv password}}
+###
+GET {{$dotenv approuter_url}}/sap_basic_auth/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/
+Authorization: Basic {{$dotenv username}}:{{$dotenv password}}
+Accept: application/json
+###
+GET {{$dotenv approuter_url}}/sap_basic_auth/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/MainCategories
+Authorization: Basic {{$dotenv username}}:{{$dotenv password}}
+Accept: application/json
+###
+GET {{$dotenv approuter_url}}/sap_basic_auth/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/Products
+    ?$top=10
+    &$inlinecount=allpages
+    &$filter=MainCategoryId eq 'Meeting %26 Presenting'
+    &$orderby=StockQuantity desc
+Authorization: Basic {{$dotenv username}}:{{$dotenv password}}
+Accept: application/json
