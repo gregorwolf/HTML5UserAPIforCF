@@ -52,6 +52,13 @@
       "destination": "SAP_ABAP_BACKEND"
     },
     {
+      "source": "^/sap_basic_auth_dyn_idp/(.*)$",
+      "target": "/sap/$1",
+      "authenticationType": "basic",
+      "dynamicIdentityProvider": true,
+      "destination": "SAP_ABAP_BACKEND"
+    },
+    {
       "source": "^/sap_basic_auth/(.*)$",
       "target": "/sap/$1",
       "authenticationType": "basic",
