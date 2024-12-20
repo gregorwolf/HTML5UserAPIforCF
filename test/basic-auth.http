@@ -1,6 +1,20 @@
 ###
 GET {{$dotenv approuter_url}}/sap_basic_auth/bc/ping
 Authorization: Basic {{$dotenv username}}:{{$dotenv password}}
+### dynamicIdentityProvider = true seems not to apply for routes with basic auth
+GET {{$dotenv approuter_url}}/sap_basic_auth_dyn_idp/bc/ping?sap_idp=sap.custom
+Authorization: Basic {{$dotenv username_ias}}:{{$dotenv password_ias}}
+### login_hint also does not work for routes with basic auth
+GET {{$dotenv approuter_url}}/sap_basic_auth/bc/ping?login_hint=%7B%22origin%22%3A%22sap.custom%22%7D
+Authorization: Basic {{$dotenv username_ias}}:{{$dotenv password_ias}}
+### Routes with basic auth only authenticate via the custom IDP when the security settings where changed
+### according to SAP Note: https://me.sap.com/notes/3042924
+### 3042924 - How to change the default identity provider for password grant flow on Cloud Foundry
+### Use the script:
+### https://github.com/gregorwolf/bookshop-demo/blob/main/tests/xsuaa-configure.http#L28
+###
+GET {{$dotenv approuter_url}}/sap_basic_auth/bc/ping
+Authorization: Basic {{$dotenv username_ias}}:{{$dotenv password_ias}}
 ###
 GET {{$dotenv approuter_url}}/sap_basic_auth/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/
 Authorization: Basic {{$dotenv username}}:{{$dotenv password}}
