@@ -6,11 +6,13 @@ Authorization: Basic {{$dotenv btp_clientid}}:{{$dotenv btp_clientsecret}}
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=password
-&username={{$dotenv username}}
-&password={{$dotenv password}}
+#&username={{$dotenv username}}
+#&password={{$dotenv password}}
+&username={{$dotenv username_ias}}
+&password={{$dotenv password_ias}}
 &client_id={{$dotenv btp_clientid}}
 &response_type=token
-#&login_hint={"origin":"sap.custom"}
+&login_hint={"origin":"sap.custom"}
 ### Fill Variables from Response
 @access_token = {{requestAccessToken.response.body.$.access_token}}
 ###
@@ -41,3 +43,19 @@ GET {{$dotenv server}}/api/sendmail
   &from=absender@dummy.com
   &to=empfaenger@dummy.com
 Authorization: Bearer {{access_token}}
+###
+GET {{$dotenv approuter_url}}/sap/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/
+Authorization: Bearer {{access_token}}
+Accept: application/json
+###
+GET {{$dotenv approuter_url}}/sap/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/MainCategories
+Authorization: Bearer {{access_token}}
+Accept: application/json
+###
+GET {{$dotenv approuter_url}}/sap/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/Products
+    ?$top=10
+    &$inlinecount=allpages
+    &$filter=MainCategoryId eq 'Meeting %26 Presenting'
+    &$orderby=StockQuantity desc
+Authorization: Bearer {{access_token}}
+Accept: application/json
