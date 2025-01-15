@@ -45,11 +45,11 @@ GET {{$dotenv server}}/api/sendmail
 Authorization: Bearer {{access_token}}
 ###
 GET {{$dotenv approuter_url}}/sap/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/
-Authorization: Bearer {{access_token}}
+x-approuter-authorization: Bearer {{access_token}}
 Accept: application/json
 ###
 GET {{$dotenv approuter_url}}/sap/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/MainCategories
-Authorization: Bearer {{access_token}}
+x-approuter-authorization: Bearer {{access_token}}
 Accept: application/json
 ###
 GET {{$dotenv approuter_url}}/sap/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/Products
@@ -57,5 +57,5 @@ GET {{$dotenv approuter_url}}/sap/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/Products
     &$inlinecount=allpages
     &$filter=MainCategoryId eq 'Meeting %26 Presenting'
     &$orderby=StockQuantity desc
-Authorization: Bearer {{access_token}}
+x-approuter-authorization: Bearer {{access_token}}
 Accept: application/json
