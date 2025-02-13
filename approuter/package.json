@@ -10,6 +10,7 @@
   },
   "scripts": {
     "start": "node ./approuter-start.js",
-    "start-local": "export VCAP_SERVICES=`cat default-env.json | jq .VCAP_SERVICES` && node ./approuter-start.js"
+    "start-local": "export VCAP_SERVICES=`cat default-env.json | jq .VCAP_SERVICES` && node ./approuter-start.js",
+    "default-env": "cf default-env html5userapi-ui"
   }
 }

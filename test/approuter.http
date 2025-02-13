@@ -1,0 +1,3 @@
+###
+GET http://localhost:5000/services/userapi/currentUser
+Authorization: Bearer {{$dotenv bearerToken}}
