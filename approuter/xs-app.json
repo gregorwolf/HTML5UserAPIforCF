@@ -62,7 +62,8 @@
       "source": "^/sap_basic_auth/(.*)$",
       "target": "/sap/$1",
       "authenticationType": "basic",
-      "destination": "SAP_ABAP_BACKEND"
+      "destination": "SAP_ABAP_BACKEND",
+      "csrfProtection": true
     },
     {
       "source": "^/sap_basic/(.*)$",
