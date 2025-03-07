@@ -1,6 +1,6 @@
 ###
 GET {{$dotenv approuter_url}}/sap_basic_auth/bc/ping
-Authorization: Basic {{$dotenv username}}:{{$dotenv password}}
+Authorization: Basic {{$dotenv username_ias}}:{{$dotenv password_ias}}
 ### dynamicIdentityProvider = true seems not to apply for routes with basic auth
 GET {{$dotenv approuter_url}}/sap_basic_auth_dyn_idp/bc/ping?sap_idp=sap.custom
 Authorization: Basic {{$dotenv username_ias}}:{{$dotenv password_ias}}
@@ -16,18 +16,44 @@ Authorization: Basic {{$dotenv username_ias}}:{{$dotenv password_ias}}
 GET {{$dotenv approuter_url}}/sap_basic_auth/bc/ping
 Authorization: Basic {{$dotenv username_ias}}:{{$dotenv password_ias}}
 ###
+GET {{$dotenv approuter_url}}/sap_basic_auth/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/$metadata
+Authorization: Basic {{$dotenv username_ias}}:{{$dotenv password_ias}}
+###
 GET {{$dotenv approuter_url}}/sap_basic_auth/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/
-Authorization: Basic {{$dotenv username}}:{{$dotenv password}}
+Authorization: Basic {{$dotenv username_ias}}:{{$dotenv password_ias}}
 Accept: application/json
 ###
 GET {{$dotenv approuter_url}}/sap_basic_auth/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/MainCategories
-Authorization: Basic {{$dotenv username}}:{{$dotenv password}}
+Authorization: Basic {{$dotenv username_ias}}:{{$dotenv password_ias}}
 Accept: application/json
 ###
+# @name getProducts
 GET {{$dotenv approuter_url}}/sap_basic_auth/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/Products
     ?$top=10
     &$inlinecount=allpages
     &$filter=MainCategoryId eq 'Meeting %26 Presenting'
     &$orderby=StockQuantity desc
-Authorization: Basic {{$dotenv username}}:{{$dotenv password}}
+Authorization: Basic {{$dotenv username_ias}}:{{$dotenv password_ias}}
+Accept: application/json
+###
+@productId={{getProducts.response.body.$.d.results.0.Id}}
+### Get CSRF Token
+# @name getCSRF
+HEAD {{$dotenv approuter_url}}/sap_basic_auth/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/
+X-CSRF-Token: Fetch
+Authorization: Basic {{$dotenv username_ias}}:{{$dotenv password_ias}}
+### Read Token to Variable
+@CSRF={{getCSRF.response.headers.x-csrf-token}}
+###
+POST {{$dotenv approuter_url}}/sap_basic_auth/opu/odata/SAP/EPM_REF_APPS_SHOP_SRV/AddProductToShoppingCart?ProductId='{{productId}}
+Authorization: Basic {{$dotenv username_ias}}:{{$dotenv password_ias}}
+X-CSRF-Token: {{CSRF}}
+Accept: application/json
+###
+GET {{$dotenv approuter_url}}/sap_basic_auth/opu/odata/sap/ZAPI_USER_NAME_SRV/UserDetailsSet
+Authorization: Basic {{$dotenv username_ias}}:{{$dotenv password_ias}}
+Accept: application/json
+###
+GET {{$dotenv approuter_url}}/sap_basic_auth/opu/odata/sap/ZEPM_BP_GW_SRV/
+Authorization: Basic {{$dotenv username_ias}}:{{$dotenv password_ias}}
 Accept: application/json
