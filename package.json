@@ -5,7 +5,7 @@
   "repository": "https://github.com/gregorwolf/HTML5UserAPIforCF.git ",
   "license": "Apache 2.0",
   "engines": {
-    "node": "^20"
+    "node": "^22"
   },
   "dependencies": {
     "@html5userapi-cf/approuter": "file:approuter",
