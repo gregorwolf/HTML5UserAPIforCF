@@ -1,5 +1,8 @@
+@requestId=hello\ntest
 ###
 GET {{$dotenv approuter_url}}/sap_basic_auth/bc/ping
+x-request-id: {{requestId}}
+x-vcap-request-id: {{requestId}}
 Authorization: Basic {{$dotenv username_ias}}:{{$dotenv password_ias}}
 ### dynamicIdentityProvider = true seems not to apply for routes with basic auth
 GET {{$dotenv approuter_url}}/sap_basic_auth_dyn_idp/bc/ping?sap_idp=sap.custom
