@@ -1,6 +1,6 @@
 ID: html5userapi
 _schema-version: "3.1"
-version: 0.5.0
+version: 0.6.1
 parameters:
   enable-parallel-deployments: true
 
