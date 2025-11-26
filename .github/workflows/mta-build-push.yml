@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths-ignore:
-      - '.github/**'
-      - 'README.md'
+      - ".github/**"
+      - "README.md"
 
 jobs:
   main:
@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: 'npm'
+          cache: "npm"
       - name: Check node version
         run: node --version
       - name: Install MTA Build Tool
@@ -35,7 +35,7 @@ jobs:
         with:
           command: mtaBuild
       - name: Upload archive file
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v5
         with:
-           name: mta
-           path: html5userapi.mtar
+          name: mta
+          path: html5userapi.mtar
