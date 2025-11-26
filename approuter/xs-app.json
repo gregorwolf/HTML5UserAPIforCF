@@ -109,7 +109,7 @@
       "authenticationType": "none"
     },
     {
-      "source": "^/index.html$",
+      "source": "^/comsapsapmentorshtml5userapiforcfui/index.html$",
       "service": "html5-apps-repo-rt",
       "authenticationType": "xsuaa",
       "cacheControl": "no-cache, no-store, must-revalidate"
