@@ -10,6 +10,14 @@
     {
       "name": "$XSAPPNAME.Display",
       "description": "display"
+    },
+    {
+      "name": "$XSAPPNAME.Client000",
+      "description": "Client000"
+    },
+    {
+      "name": "$XSAPPNAME.Client001",
+      "description": "Client001"
     }
   ],
   "attributes": [
@@ -59,6 +67,36 @@
         "country",
         "city",
         "groups"
+      ]
+    },
+    {
+      "name": "Client000",
+      "description": "Client000",
+      "scope-references": [
+        "$XSAPPNAME.Client000"
+      ]
+    },
+    {
+      "name": "Client001",
+      "description": "Client001",
+      "scope-references": [
+        "$XSAPPNAME.Client001"
+      ]
+    }
+  ],
+  "role-collections": [
+    {
+      "name": "Client000",
+      "description": "Client000",
+      "role-template-references": [
+        "$XSAPPNAME.Client000"
+      ]
+    },
+    {
+      "name": "Client001",
+      "description": "Client001",
+      "role-template-references": [
+        "$XSAPPNAME.Client001"
       ]
     }
   ],

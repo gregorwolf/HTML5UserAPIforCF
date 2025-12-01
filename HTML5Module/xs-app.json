@@ -36,6 +36,18 @@
       "destination": "SAP_ABAP_BACKEND"
     },
     {
+      "source": "^/sap_client/(.*)$",
+      "target": "/sap/$1",
+      "destination": "SAP_ABAP_BACKEND_000",
+      "scope": "$XSAPPNAME.Client000"
+    },
+    {
+      "source": "^/sap_client/(.*)$",
+      "target": "/sap/$1",
+      "destination": "SAP_ABAP_BACKEND",
+      "scope": "$XSAPPNAME.Client001"
+    },
+    {
       "source": "^/sap_basic/(.*)$",
       "target": "/sap/$1",
       "destination": "SAP_ABAP_BACKEND_BASIC_AUTH"
