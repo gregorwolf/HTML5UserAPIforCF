@@ -29,13 +29,6 @@
       "csrfProtection": true
     },
     {
-      "source": "^/rfc(.*)$",
-      "target": "/rfc$1",
-      "authenticationType": "xsuaa",
-      "destination": "html5userapi-srv-java",
-      "csrfProtection": true
-    },
-    {
       "source": "^/destination/([^/]+)/(.*)$",
       "target": "$2",
       "destination": "$1"
