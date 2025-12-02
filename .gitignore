@@ -25,3 +25,5 @@ resources/
 .mta/
 target
 .env
+# added by cds
+.cdsrc-private.json
