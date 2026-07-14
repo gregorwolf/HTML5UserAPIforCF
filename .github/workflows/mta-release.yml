@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Download CF artifact
-        uses: dawidd6/action-download-artifact@v6
+        uses: dawidd6/action-download-artifact@v8
         with:
           workflow: mta-build-push.yml
           workflow_conclusion: success
